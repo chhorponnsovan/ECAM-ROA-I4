@@ -1,6 +1,5 @@
+// This program converts a given time in hours, minutes, and seconds into total seconds. It prompts the user to input hours, minutes, and seconds, calculates the total seconds using the formula (hours * 3600) + (minutes * 60) + seconds, and then displays the result in a formatted manner.
 import java.util.Scanner;
-
-
 public class Quiz1Question4 {
     public static void main(String[] args) {
         System.out.println("------- Program for converting from seconds into hours:minutes:seconds ------- ");

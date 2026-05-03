@@ -1,5 +1,5 @@
+// This program prompts the user to input a positive integer, increments it by 1, and then displays the result as a message about being luckier. It also includes error handling for non-integer inputs.
 import java.util.Scanner;
-
 public class Quiz1Question2 {   
     public static void main(String[] args) {
         System.out.println("‑‑‑‑‑‑‑ Program for guessing your luckiness ‑‑‑‑‑‑‑"); // Program for guessing your luckiness
