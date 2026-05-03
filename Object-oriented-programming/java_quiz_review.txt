@@ -62,7 +62,7 @@ public class Quiz1Question3 {
         System.out.println("------- Program for converting from seconds into hours:minutes:seconds ------- ");
         Scanner sc = new Scanner(System.in);
         int totalSeconds, hours, minutes, seconds; **// Declare four integer variables, totalSeconds, hours, minutes, and seconds.**
-        System.out.print("[Input number of seconds: ]");
+        System.out.print("Input number of seconds: "); **// Prompt the user to input the number of seconds.**
         if(!sc.hasNextInt()){
             System.out.println("Please input only integer.");
             sc.nextLine();
