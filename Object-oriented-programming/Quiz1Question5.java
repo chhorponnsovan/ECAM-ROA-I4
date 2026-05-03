@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 /** If we input 50, the program below will produce result as following:
  *
 ------- Program for calculating duration of travel from ITC to Airport -------
@@ -7,8 +5,8 @@ Given that distance from ITC to Airport is 30km and travel speed is average 30km
 Please input traffic jam factor (in percentage [0-100]): 50
 
 Travelling Duration = 02:00:00
-
  */
+import java.util.Scanner;
 public class Quiz1Question5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
