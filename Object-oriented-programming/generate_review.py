@@ -40,7 +40,7 @@ def build_review() -> str:
         key=extract_key,
     )
 
-    parts = ["## Java Quiz Review", "", "Generated automatically from the `.java` files in this folder.", "To regenerate this section, run `python generate_review.py`.", ""]
+    parts = ["## Java Quiz Review", "", "Generated automatically from the `.java` files in the 'QuizQuestion' folder.", "To regenerate this section, run `python generate_review.py`.", ""]
 
     if not java_files:
         parts.append("No Java quiz files found.")
