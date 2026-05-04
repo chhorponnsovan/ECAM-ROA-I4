@@ -10,7 +10,7 @@ public class Quiz3Question2 {
         System.out.print("Enter the time (in hours): ");
         double time = scanner.nextDouble();
 
-        if (time == 0) {
+        if (time == 0) { // Check for division by zero
             System.out.println("Time must be greater than zero.");
         } else {
             double speed = distance / time;
