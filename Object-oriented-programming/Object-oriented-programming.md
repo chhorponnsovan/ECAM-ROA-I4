@@ -405,5 +405,498 @@ public class Quiz2Question8 {
 }
 ```
 
+### Quiz 3 - Question 1
+
+```java
+package QuizQuestion;
+//Calculator of two numbers
+import java.util.Scanner;
+public class Quiz3Question1 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+        System.out.println("Choose operation: ");
+        System.out.println("1. Addition");    
+        System.out.println("2. Subtraction");
+        System.out.println("3. Multiplication");
+        System.out.println("4. Division");
+
+        int choice = scanner.nextInt(); **// choice = scanner.nextInt()**
+        double result = 0;
+        switch (choice) {
+            case 1:
+                result = num1 + num2;
+                System.out.printf("Result: %.2f\n", result);
+                break;
+            case 2:
+                result = num1 - num2;
+                System.out.printf("Result: %.2f\n", result);
+                break;
+            case 3:
+                result = num1 * num2;
+                System.out.printf("Result: %.2f\n", result);
+                break;
+            case 4:
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    System.out.printf("Result: %.2f\n", result);
+                } else {
+                    System.out.println("Error: Division by zero is not allowed.");
+                }
+                break;
+            default:
+                System.out.println("Invalid choice. Please select a valid operation.");
+            }
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 2
+
+```java
+package QuizQuestion;
+// speed operation given distance and time
+import java.util.Scanner;
+
+public class Quiz3Question2 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the distance (in kilometers): ");
+        double distance = scanner.nextDouble();
+        System.out.print("Enter the time (in hours): ");
+        double time = scanner.nextDouble();
+
+        if (time == 0) { **// time == 0**
+            System.out.println("Time must be greater than zero.");
+        } else {
+            double speed = distance / time;
+            System.out.printf("The speed is: %.2f km/h\n", speed);
+        }
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 3
+
+```java
+package QuizQuestion;
+
+import java.util.Scanner;
+
+public class Quiz3Question3 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the radius of the circle: ");
+        double radius = scanner.nextDouble();
+        double area = Math.PI * radius * radius; **// Math.PI * radius * radius**
+        System.out.printf("The area of the circle with radius %.2f is: %.2f\n", radius, area);
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 4
+
+```java
+package QuizQuestion;
+
+import java.util.Scanner;
+
+public class Quiz3Question4 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the length of the rectangle: ");
+        double length = scanner.nextDouble();
+        System.out.print("Enter the width of the rectangle: ");
+        double width = scanner.nextDouble();
+        double area = length * width; 
+        System.out.printf("The area of the rectangle with length %.2f and width %.2f is: %.2f\n", length, width, area);
+        scanner.close(); **// scanner.close()**
+    }
+    
+}
+```
+
+### Quiz 3 - Question 5
+
+```java
+package QuizQuestion;
+// is leap year?
+import java.util.Scanner;
+public class Quiz3Question5 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a year: ");
+        int year = scanner.nextInt();
+        boolean isLeapYear = (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0); **// year % 4 == 0 && year % 100 != 0**
+        if (isLeapYear) {
+            System.out.println(year + " is a leap year.");
+        } else {
+            System.out.println(year + " is not a leap year.");  
+        }           
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 6
+
+```java
+package QuizQuestion;
+// calculate exchange rate
+import java.util.Scanner;
+public class Quiz3Question6 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter amount in original currency: ");
+        double originalAmount = scanner.nextDouble();
+
+        System.out.print("The equivalent amount in the target currency is: ");
+        double targetAmount = scanner.nextDouble();
+
+        double exchangeRate = targetAmount / originalAmount; **// targetAmount / originalAmount**
+        System.out.printf("The exchange rate is %.2f.\n", exchangeRate);
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 7
+
+```java
+package QuizQuestion;
+// name + age print
+import java.util.Scanner;
+public class Quiz3Question7 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter your name: ");
+        String name = scanner.nextLine();
+
+        System.out.print("Enter your age: ");
+        int age = scanner.nextInt();
+
+        System.out.println("Hello " + name + ", you are " + age + " years old."); **// + name +**
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 8
+
+```java
+package QuizQuestion;
+
+import java.util.Scanner;
+    public class Quiz3Question8 {
+        public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+       
+        System.out.print("Enter a string: ");
+        String input = scanner.nextLine(); **// nextLine()**
+       
+        int wordCount = 0;
+        if(input != null && !input.trim().isEmpty() ){ **// isEmpty()**
+            String[] words = input.trim().split("\\s+"); **// split("\\s+")**
+            wordCount = words.length; **// wordCount**
+        }
+        System.out.println("Number of words: " + wordCount); **// wordCount**
+       
+        scanner.close(); **// close()**
+    }
+}
+```
+
+### Quiz 3 - Question 9
+
+```java
+package QuizQuestion;
+import java.util.Scanner;
+public class Quiz3Question9 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+
+        int a = Math.abs(num1);
+        int b = Math.abs(num2);
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        int gcd = a;
+        int lcm = Math.abs(num1 * num2) / gcd; **// Math.abs(num1 * num2)**
+        System.out.println("The LCM of " + num1 + " and " + num2 + " is: " + lcm);
+        scanner.close();
+    }
+    
+}
+```
+
+### Quiz 3 - Question 10
+
+```java
+package QuizQuestion;
+import java.util.Scanner;
+public class Quiz3Question10 {
+ public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("How many numbers do you want to enter? ");
+        int count = scanner.nextInt(); **//nextInt()**
+        if (count <= 0) {
+            System.out.println("Please enter a positive number of elements.");
+            scanner.close();
+            return; **//return**
+        }
+        double[] numbers = new double[count]; **// count**
+        System.out.println("Enter the numbers:");
+        for (int i = 0; i < count; i++) { **//count**
+            System.out.print("Number " + (i + 1) + ": ");
+            numbers[i] = scanner.nextDouble(); **// nextDouble()**
+        }
+        double sum = 0;
+        for (double number : numbers) { **// numbers**
+            sum += number;
+        }
+        double average = sum / numbers.length; **// numbers**
+        System.out.printf("Average: %.2f\n", average);
+       
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 11
+
+```java
+package QuizQuestion;
+
+import java.util.Scanner;
+import java.util.Random;
+
+public class Quiz3Question11 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Random random = new Random();
+
+        int targetNumber = random.nextInt(100) + 1;
+        int attempts = 0;
+        boolean hasGuessedCorrectly = false;
+
+        System.out.println("Welcome to the Number Guessing Game!");
+        System.out.println("I have selected a number between 1 and 100. Can you guess it?");
+        while (!hasGuessedCorrectly) {
+            System.out.print("Enter your guess: ");
+            int guess = scanner.nextInt();
+            attempts++; **// attempts++**
+
+            if (guess < targetNumber) {
+                System.out.println("Too low! Try again.");
+            } else if (guess > targetNumber) {
+                System.out.println("Too high! Try again.");
+            } else {
+                hasGuessedCorrectly = true;
+                System.out.println("Congratulations! You've guessed the number " + targetNumber + " in " + attempts + " attempts.");
+            }
+        }
+
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 12
+
+```java
+package QuizQuestion;
+// use switch case 1 is celcius to fahrenheit, 2 is fahrenheit to celsius.
+import java.util.Scanner;
+public class Quiz3Question12 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Choose conversion type:");
+        System.out.println("1: Celsius to Fahrenheit");
+        System.out.println("2: Fahrenheit to Celsius");
+        int choice = scanner.nextInt();
+
+        switch (choice) {
+            case 1:
+                System.out.print("Enter temperature in Celsius: ");
+                double celsius = scanner.nextDouble();
+                double fahrenheit = (celsius * 9 / 5) + 32;
+                System.out.printf("%.2f Celsius is %.2f Fahrenheit\n", celsius, fahrenheit);
+                break;
+            case 2:
+                System.out.print("Enter temperature in Fahrenheit: ");
+                fahrenheit = scanner.nextDouble();
+                celsius = (fahrenheit - 32) * 5 / 9; **// (fahrenheit - 32) * 5.0/9.0**
+                System.out.printf("%.2f Fahrenheit is %.2f Celsius\n", fahrenheit, celsius);
+                break;
+            default:
+                System.out.println("Invalid choice. Please select 1 or 2.");
+        }
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 13
+
+```java
+package QuizQuestion;
+// is odd or even
+import java.util.Scanner;
+public class Quiz3Question13 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter an integer: ");
+        int number = scanner.nextInt();
+        
+        if (number % 2 == 0) { **// number % 2 == 0**
+            System.out.println(number + " is even.");
+        } else {
+            System.out.println(number + " is odd.");
+        }
+        
+        scanner.close();
+    }
+    
+}
+```
+
+### Quiz 3 - Question 14
+
+```java
+package QuizQuestion;
+// average of 3 numbers
+import java.util.Scanner;
+public class Quiz3Question14 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+        
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+        
+        System.out.print("Enter the third number: ");
+        double num3 = scanner.nextDouble();
+        
+        double average = (num1 + num2 + num3) / 3; **// (num1 + num2 + num3) / 3**
+        System.out.println("The average of the three numbers is: " + average);
+        
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 15
+
+```java
+package QuizQuestion;
+import java.util.Scanner;
+public class Quiz3Question15 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("How many item in your cart? ");
+        int itemCount = scanner.nextInt();
+
+        if (itemCount <= 0) { **// itemCount**
+            System.out.println("Item count cannot be negative.");
+            scanner.close();
+            return;
+        }
+        double subtotal = 0;
+
+        System.out.println("Enter the price of each item:");
+        for (int i = 0; i < itemCount; i++) { **// itemcount**
+            System.out.print("Item " + (i + 1) + " price:$: ");
+            double price = scanner.nextDouble(); **// scanner.nextDouble()**
+            if (price < 0) { **// price**
+                System.out.println("Price cannot be negative.");
+                scanner.close();
+                return;
+            }
+            subtotal += price;
+        }
+        System.out.println("Enter tax rate (as a percentage): ");
+        double taxRate = scanner.nextDouble(); **// scanner.nextDouble()**
+
+        double taxAmount = subtotal * (taxRate / 100); **// taxRate**
+        double totalCost = subtotal + taxAmount; **// taxAmount**
+        
+        System.out.printf("Shopping cart summary\n");
+        System.out.printf("Subtotal: $%.2f\n", subtotal);
+        System.out.printf("Tax (%.2f%%): $%.2f\n", taxRate, taxAmount); **//taxRate**
+        System.out.printf("Total Cost: $%.2f\n", totalCost);
+
+        scanner.close(); **// .close()**
+    }
+}
+```
+
+### Quiz 3 - Question 16
+
+```java
+package QuizQuestion;
+
+//sum all even from 1 to given
+import java.util.Scanner;
+public class Quiz3Question16 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int n = scanner.nextInt();
+
+        int sum = 0;
+        
+        for (int i = 2; i <= n; i += 2) {
+            sum += i; **// sum += i;**
+        }
+        System.out.println("Sum of even numbers from 1 to " + n + " is: " + sum);
+        scanner.close();
+    }
+}
+```
+
+### Quiz 3 - Question 17
+
+```java
+package QuizQuestion;
+// sum of first and second number 
+import java.util.Scanner;
+public class Quiz3Question17 {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+        double sum = num1 + num2; **// double sum = num1 + num2;**
+        System.out.println("The sum is: " + sum);
+
+        scanner.close();
+    }
+
+}
+```
+
 <!-- END JAVA QUIZ REVIEW -->
 
