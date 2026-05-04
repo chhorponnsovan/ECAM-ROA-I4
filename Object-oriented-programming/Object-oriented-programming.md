@@ -7,7 +7,7 @@ The Java quiz review section below is generated automatically from the `.java` f
 <!-- BEGIN JAVA QUIZ REVIEW -->
 ## Java Quiz Review
 
-Generated automatically from the `.java` files in this folder.
+Generated automatically from the `.java` files in the 'QuizQuestion' folder.
 To regenerate this section, run `python generate_review.py`.
 
 ### Quiz 1 - Question 1
