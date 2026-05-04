@@ -8,7 +8,7 @@ public class Quiz3Question1 {
         System.out.print("Enter the first number: ");
         double num1 = scanner.nextDouble();
 
-        System.out.println("Enter the second number: ");
+        System.out.print("Enter the second number: ");
         double num2 = scanner.nextDouble();
         System.out.println("Choose operation: ");
         System.out.println("1. Addition");    
@@ -18,8 +18,6 @@ public class Quiz3Question1 {
 
         int choice = scanner.nextInt(); // Read the user's choice for the operation
         double result = 0;
-        boolean validoperation = true;
-
         switch (choice) {
             case 1:
                 result = num1 + num2;
@@ -43,8 +41,7 @@ public class Quiz3Question1 {
                 break;
             default:
                 System.out.println("Invalid choice. Please select a valid operation.");
-        }
-
+            }
         scanner.close();
     }
 }
