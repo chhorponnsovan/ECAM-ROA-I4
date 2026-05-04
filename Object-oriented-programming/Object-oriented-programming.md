@@ -262,5 +262,135 @@ public class Quiz2Question4 {
 }
 ```
 
+### Quiz 2 - Question 5
+
+```java
+/* If we input 20 30 50 in sequences, the proram below will produce result as following:
+ *
+------- Program for converting time to seconds -------
+Please input hours: 20
+Please input minutes: 30
+Please input seconds: 50
+
+Number of seconds = 20x3600 + 30x60 + 50 = 73850
+    */
+import java.util.Scanner;
+public class Quiz2Question5 {
+        public static void main(String[] args) {
+        System.out.println("------- Program for converting from seconds into hours:minutes:seconds ------- ");
+        Scanner sc = new Scanner(System.in);
+        int totalSeconds, hours, minutes, seconds; **// Declare four integer variables, totalSeconds, hours, minutes, and seconds.**
+        System.out.print("Please input hours: ");
+        hours = sc.nextInt(); **// Prompt the user to input hours and read the input using the Scanner object, storing it in the variable hours.**
+        System.out.print("Please input minutes: ");
+        minutes = sc.nextInt();
+        System.out.print("Please input seconds: "); **// Prompt the user to input seconds and read the input using the Scanner object, storing it in the variable seconds.**
+        seconds = sc.nextInt();
+       
+        totalSeconds = (hours * 3600) + (minutes * 60) + seconds; **// Calculate the total number of seconds by multiplying hours by 3600, minutes by 60, and adding all three components together.**
+
+        System.out.printf("Number of seconds = %dx3600 + %dx60 + %d = %d\n", hours, minutes, seconds, totalSeconds);
+        // Format the output to display the calculation of total seconds, showing the contribution of hours, minutes, and seconds in the format "Number of seconds = Hx3600 + Mx60 + S = TotalSeconds", where H, M, S, and TotalSeconds are replaced with their respective values.
+        sc.close();
+    }
+}
+```
+
+### Quiz 2 - Question 6
+
+```java
+/* Write a Java program to display a triangle made from stars. The number of lines and number of columns is given by user. Example:
+
+*
+**
+***
+****
+*****
+*/
+
+import java.util.Scanner;
+
+public class Quiz2Question6 {
+        public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Input number of lines: ");
+        int lines = sc.nextInt();
+        System.out.print("Enter number of columns: ");
+        int columns = sc.nextInt();
+        int k;
+        if (lines>=columns){
+            k = lines;
+        } else {
+            k = columns;
+        }
+
+        for (int i = 1; i <= k; i++) {
+            for (int j = 1; j <= i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+        sc.close();
+    }
+}
+```
+
+### Quiz 2 - Question 7
+
+```java
+/** If we input 5289, the proram below will produce result as following:
+ *
+------- Program for converting from seconds into hours:minutes:seconds -------
+Input number of seconds: 5289
+Time corresponding to 5289seconds is 01:28:09.
+ */
+import java.util.Scanner;
+public class Quiz2Question7 {
+        public static void main(String[] args) {
+        System.out.println("------- Program for converting from seconds into hours:minutes:seconds ------- ");
+        Scanner sc = new Scanner(System.in);
+        int totalSeconds, hours, minutes, seconds; **// Declare four integer variables, totalSeconds, hours, minutes, and seconds.**
+        System.out.print("Please input hours: ");
+        hours = sc.nextInt(); **// Prompt the user to input hours and read the input using the Scanner object, storing it in the variable hours.**
+        System.out.print("Please input minutes: ");
+        minutes = sc.nextInt();
+        System.out.print("Please input seconds: "); **// Prompt the user to input seconds and read the input using the Scanner object, storing it in the variable seconds.**
+        seconds = sc.nextInt();
+       
+        totalSeconds = (hours * 3600) + (minutes * 60) + seconds; **// Calculate the total number of seconds by multiplying hours by 3600, minutes by 60, and adding all three components together.**
+
+        System.out.printf("Number of seconds = %dx3600 + %dx60 + %d = %d\n", hours, minutes, seconds, totalSeconds);
+        // Format the output to display the calculation of total seconds, showing the contribution of hours, minutes, and seconds in the format "Number of seconds = Hx3600 + Mx60 + S = TotalSeconds", where H, M, S, and TotalSeconds are replaced with their respective values.
+        sc.close();
+    }
+}
+```
+
+### Quiz 2 - Question 8
+
+```java
+/*If we input NOON in program below it produces output:
+Please gives a word to check: NOON
+NOON is a Palindrome
+ */
+import java.util.Scanner;
+public class Quiz2Question8 {
+    public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    String pal; **//declare variable pal to store user input**
+    System.out.print("Please gives a word to check: "); **//prompt user to input a word**
+    pal = sc.nextLine();
+    StringBuilder input1 = new StringBuilder(pal); **//create a StringBuilder object input1 and initialize it with the value of pal**
+    String rev = input1.reverse().toString(); **//reverse the string using StringBuilder's reverse() method and convert it back to a String, storing the result in variable rev**
+    if(rev.equalsIgnoreCase(pal)){ **//compare the reversed string with the original string, ignoring case sensitivity, to check if it is a palindrome**
+        System.out.printf("%s is a Palindrome\n", pal); **//if the reversed string is equal to the original string, print that it is a palindrome**
+    }else{
+        System.out.printf("%s is NOT a Palindrome\n", pal); **//if the reversed string is not equal to the original string, print that it is not a palindrome**
+    }
+    sc.close(); **//close the Scanner object to prevent resource leaks**
+    }   
+}
+```
+
 <!-- END JAVA QUIZ REVIEW -->
 
