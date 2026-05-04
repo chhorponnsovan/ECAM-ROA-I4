@@ -13,6 +13,7 @@ To regenerate this section, run `python generate_review.py`.
 ### Quiz 1 - Question 1
 
 ```java
+package QuizQuestion;
 // count the number of hundreds in a positive integer
 import java.util.Scanner;
 public class Quiz1Question1 {
@@ -38,6 +39,7 @@ public class Quiz1Question1 {
 ### Quiz 1 - Question 2
 
 ```java
+package QuizQuestion;
 // This program prompts the user to input a positive integer, increments it by 1, and then displays the result as a message about being luckier. It also includes error handling for non-integer inputs.
 import java.util.Scanner;
 public class Quiz1Question2 {   
@@ -63,6 +65,7 @@ public class Quiz1Question2 {
 ### Quiz 1 - Question 3
 
 ```java
+package QuizQuestion;
 // This program converts a given time in hours, minutes, and seconds into total seconds. It prompts the user to input hours, minutes, and seconds, calculates the total seconds using the formula (hours * 3600) + (minutes * 60) + seconds, and then displays the result in a formatted manner.
 import java.util.Scanner;
 public class Quiz1Question3 {
@@ -91,6 +94,7 @@ public class Quiz1Question3 {
 ### Quiz 1 - Question 4
 
 ```java
+package QuizQuestion;
 // This program converts a given time in hours, minutes, and seconds into total seconds. It prompts the user to input hours, minutes, and seconds, calculates the total seconds using the formula (hours * 3600) + (minutes * 60) + seconds, and then displays the result in a formatted manner.
 import java.util.Scanner;
 public class Quiz1Question4 {
@@ -117,6 +121,7 @@ public class Quiz1Question4 {
 ### Quiz 1 - Question 5
 
 ```java
+package QuizQuestion;
 /** If we input 50, the program below will produce result as following:
 ------- Program for calculating duration of travel from ITC to Airport -------
 Given that distance from ITC to Airport is 30km and travel speed is average 30km/h.
@@ -162,6 +167,7 @@ public class Quiz1Question5 {
 ### Quiz 2 - Question 1
 
 ```java
+package QuizQuestion;
 // display all numbers from 120 to 150
 public class Quiz2Question1 {
         public static void main(String[] args) {
@@ -178,6 +184,7 @@ public class Quiz2Question1 {
 ### Quiz 2 - Question 2
 
 ```java
+package QuizQuestion;
 // display all odd numbers from 1 to 500
 public class Quiz2Question2 {
         public static void main(String[] args) {
@@ -194,6 +201,7 @@ public class Quiz2Question2 {
 ### Quiz 2 - Question 3
 
 ```java
+package QuizQuestion;
 /** If we input 50, the program below will produce result as following:
  *
 ------- Program for calculating duration of travel from ITC to Airport -------
@@ -239,6 +247,7 @@ public class Quiz2Question3 {
 ### Quiz 2 - Question 4
 
 ```java
+package QuizQuestion;
 /*Display even numbers (ex: 2, 4, 6, 8, etc.)
 located between A and 500.
 Where A is given by user (0<A<500).
@@ -265,6 +274,7 @@ public class Quiz2Question4 {
 ### Quiz 2 - Question 5
 
 ```java
+package QuizQuestion;
 /* If we input 20 30 50 in sequences, the proram below will produce result as following:
  *
 ------- Program for converting time to seconds -------
@@ -299,6 +309,7 @@ public class Quiz2Question5 {
 ### Quiz 2 - Question 6
 
 ```java
+package QuizQuestion;
 /* Write a Java program to display a triangle made from stars. The number of lines and number of columns is given by user. Example:
 
 *
@@ -338,6 +349,7 @@ public class Quiz2Question6 {
 ### Quiz 2 - Question 7
 
 ```java
+package QuizQuestion;
 /** If we input 5289, the proram below will produce result as following:
  *
 ------- Program for converting from seconds into hours:minutes:seconds -------
@@ -369,6 +381,7 @@ public class Quiz2Question7 {
 ### Quiz 2 - Question 8
 
 ```java
+package QuizQuestion;
 /*If we input NOON in program below it produces output:
 Please gives a word to check: NOON
 NOON is a Palindrome

@@ -36,7 +36,7 @@ def format_java_file(path: Path) -> str:
 
 def build_review() -> str:
     java_files = sorted(
-        [p for p in BASE_DIR.glob("*.java") if p.is_file()],
+        [p for p in BASE_DIR.rglob("*.java") if p.is_file()],
         key=extract_key,
     )
 
@@ -82,7 +82,7 @@ def main():
     md_text = MD_FILE.read_text(encoding="utf-8")
     updated_md = replace_section(md_text, review)
     MD_FILE.write_text(updated_md, encoding="utf-8")
-    print(f"Generated review for {len([p for p in BASE_DIR.glob('*.java') if p.is_file()])} Java files.")
+    print(f"Generated review for {len([p for p in BASE_DIR.rglob('*.java') if p.is_file()])} Java files.")
     print(f"Wrote {TXT_FILE.name} and updated {MD_FILE.name}.")
 
 
