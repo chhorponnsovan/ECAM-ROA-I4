@@ -1,3 +1,4 @@
+package QuizQuestion;
 // display all odd numbers from 1 to 500
 public class Quiz2Question2 {
         public static void main(String[] args) {

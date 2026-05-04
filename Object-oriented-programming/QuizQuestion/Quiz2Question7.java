@@ -1,14 +1,12 @@
-/* If we input 20 30 50 in sequences, the proram below will produce result as following:
+package QuizQuestion;
+/** If we input 5289, the proram below will produce result as following:
  *
-------- Program for converting time to seconds -------
-Please input hours: 20
-Please input minutes: 30
-Please input seconds: 50
-
-Number of seconds = 20x3600 + 30x60 + 50 = 73850
-    */
+------- Program for converting from seconds into hours:minutes:seconds -------
+Input number of seconds: 5289
+Time corresponding to 5289seconds is 01:28:09.
+ */
 import java.util.Scanner;
-public class Quiz2Question5 {
+public class Quiz2Question7 {
         public static void main(String[] args) {
         System.out.println("------- Program for converting from seconds into hours:minutes:seconds ------- ");
         Scanner sc = new Scanner(System.in);

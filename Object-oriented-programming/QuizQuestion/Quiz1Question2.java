@@ -1,3 +1,4 @@
+package QuizQuestion;
 // This program prompts the user to input a positive integer, increments it by 1, and then displays the result as a message about being luckier. It also includes error handling for non-integer inputs.
 import java.util.Scanner;
 public class Quiz1Question2 {   

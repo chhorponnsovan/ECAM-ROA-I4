@@ -1,3 +1,4 @@
+package QuizQuestion;
 // count the number of hundreds in a positive integer
 import java.util.Scanner;
 public class Quiz1Question1 {

@@ -1,3 +1,4 @@
+package QuizQuestion;
 /*If we input NOON in program below it produces output:
 Please gives a word to check: NOON
 NOON is a Palindrome

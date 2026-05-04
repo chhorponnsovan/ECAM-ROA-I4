@@ -1,3 +1,4 @@
+package QuizQuestion;
 // display all numbers from 120 to 150
 public class Quiz2Question1 {
         public static void main(String[] args) {

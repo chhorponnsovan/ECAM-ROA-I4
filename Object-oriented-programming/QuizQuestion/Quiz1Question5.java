@@ -1,3 +1,4 @@
+package QuizQuestion;
 /** If we input 50, the program below will produce result as following:
 ------- Program for calculating duration of travel from ITC to Airport -------
 Given that distance from ITC to Airport is 30km and travel speed is average 30km/h.

@@ -1,3 +1,4 @@
+package QuizQuestion;
 /*Display even numbers (ex: 2, 4, 6, 8, etc.)
 located between A and 500.
 Where A is given by user (0<A<500).

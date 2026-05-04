@@ -1,3 +1,4 @@
+package QuizQuestion;
 /* Write a Java program to display a triangle made from stars. The number of lines and number of columns is given by user. Example:
 
 *
