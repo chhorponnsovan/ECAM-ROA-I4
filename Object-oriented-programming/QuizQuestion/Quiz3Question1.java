@@ -16,7 +16,7 @@ public class Quiz3Question1 {
         System.out.println("3. Multiplication");
         System.out.println("4. Division");
 
-        int choice = scanner.nextInt(); // Read the user's choice for the operation
+        int choice = scanner.nextInt(); // choice = scanner.nextInt()
         double result = 0;
         switch (choice) {
             case 1:
