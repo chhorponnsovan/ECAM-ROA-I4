@@ -11,7 +11,7 @@ public class Quiz3Question7 {
         System.out.print("Enter your age: ");
         int age = scanner.nextInt();
 
-        System.out.println("Hello " + name + ", you are " + age + " years old.");
+        System.out.println("Hello " + name + ", you are " + age + " years old."); // + name +
         scanner.close();
     }
 }
