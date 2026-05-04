@@ -9,7 +9,7 @@ public class Quiz3Question4 {
         double length = scanner.nextDouble();
         System.out.print("Enter the width of the rectangle: ");
         double width = scanner.nextDouble();
-        double area = length * width; // area = length * width
+        double area = length * width; 
         System.out.printf("The area of the rectangle with length %.2f and width %.2f is: %.2f\n", length, width, area);
         scanner.close(); // scanner.close()
     }
