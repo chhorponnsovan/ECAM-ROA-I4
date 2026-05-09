@@ -1,6 +1,5 @@
 import pandas as pd
 import statsmodels.api as sm
-import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.linear_model import LinearRegression
@@ -9,11 +8,16 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 def display_regression_analysis(df, y_col, X_cols):
     """
-    Performs OLS regression and displays the regression summary and a cusle.
+    Performs OLS regression and displays the regression summary, ANOVA table,
+    regression equation, and scatter plot(s) with regression line(s).
 
-    Args:        df (pd.DataFrame): The input DataFrame containing the data.
+    Args:
+        df (pd.DataFrame): The input DataFrame containing the data.
         y_col (str): The name of the dependent variable column.
         X_cols (list): A list of names of the independent variable columns.
+
+    Returns:
+        tuple: (results, anova_table, equation_str)
     """
     # Prepare data for statsmodels
     y = df[y_col]
@@ -29,9 +33,9 @@ def display_regression_analysis(df, y_col, X_cols):
     df_residual = results.df_resid
     df_total = df_model + df_residual
 
-    ss_model = results.ess # Explained Sum of Squares (Regression SS)
-    ss_residual = results.ssr # Residual Sum of Squares (Error SS)
-    ss_total = ss_model + ss_residual # Total Sum of Squares
+    ss_model = results.ess  # Explained Sum of Squares (Regression SS)
+    ss_residual = results.ssr  # Residual Sum of Squares (Error SS)
+    ss_total = ss_model + ss_residual  # Total Sum of Squares
 
     ms_model = ss_model / df_model
     ms_residual = ss_residual / df_residual
@@ -49,48 +53,47 @@ def display_regression_analysis(df, y_col, X_cols):
     }
     anova_table = pd.DataFrame(anova_data, index=['Regression', 'Residual', 'Total'])
 
+    # Build regression equation string
+    equation_parts = [f"{results.params.iloc[0]:.4f}"]
+    for i, col in enumerate(X_cols):
+        coef = results.params.iloc[i + 1]
+        sign = "+" if coef >= 0 else "-"
+        equation_parts.append(f"{sign} {abs(coef):.4f}*{col}")
+    equation_str = f"{y_col} = {' '.join(equation_parts)}"
+
     print("\n--- OLS Regression Summary ---")
     print(results.summary())
     print("\n--- Custom ANOVA Table ---")
-    # .to_string() helps with formatting in console output
     print(anova_table.round(4).to_string())
+    print("\n--- Regression Equation ---")
+    print(equation_str)
 
-    # Plotting the scatter plot of the dependent variable vs independent variables
-    for col in X_cols:
+    # Plotting scatter plot with regression line(s)
+    if len(X_cols) == 1:
+        col = X_cols[0]
         plt.figure(figsize=(8, 6))
-        plt.scatter(df[col], y, color='blue', label='Data Points')
+        plt.scatter(df[col], y, color='blue', label='Data Points', alpha=0.6)
+
+        X_sorted = np.sort(df[col])
+        y_line = results.params.iloc[0] + results.params.iloc[1] * X_sorted
+        plt.plot(X_sorted, y_line, color='red', linewidth=2, label='Regression Line')
+
         plt.xlabel(col)
         plt.ylabel(y_col)
-        plt.title(f'Scatter Plot of {y_col} vs {col}')
+        plt.title(f'Scatter Plot of {y_col} vs {col} with Regression Line')
         plt.legend()
-        plt.grid()
+        plt.grid(True, alpha=0.3)
         plt.show()
-
-    # show the regression line 
-    #print y = b0 + b1*x1 + b2*x2 + ... + bn*xn
-    print("\n--- Regression Equation ---")
-    coefficients = results.params
-    equation = f"{y_col} = {coefficients[0]:.4f}"
-    for i, col in enumerate(X_cols):
-        equation += f" + ({coefficients[i+1]:.4f} * {col})"
-    print(equation)
-    # first check the xcols ifs there is only one independent variable then we can plot the regression line
-    if len(X_cols) == 1:
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-        model_lr = LinearRegression()
-        model_lr.fit(X_train, y_train)
-        y_pred = model_lr.predict(X_test)
-
-        plt.figure(figsize=(8, 6))
-        plt.scatter(X_test, y_test, color='blue', label='Actual')
-        plt.plot(X_test, y_pred, color='red', label='Predicted')
-        plt.xlabel(X_cols[0])
-        plt.ylabel(y_col)
-        plt.title(f'Regression Line for {y_col} vs {X_cols[0]}')
-        plt.legend()
-        plt.grid()
-        plt.show()
-
-    ## If there are multiple independent variables, just break the loop and do not plot the regression line as it is not possible to plot in 2D
     else:
-        print("\nMultiple independent variables detected. Skipping regression line plot.")
+        for col in X_cols:
+            plt.figure(figsize=(8, 6))
+            plt.scatter(df[col], y, color='blue', label='Data Points', alpha=0.6)
+            plt.xlabel(col)
+            plt.ylabel(y_col)
+            plt.title(f'Scatter Plot of {y_col} vs {col}')
+            plt.legend()
+            plt.grid(True, alpha=0.3)
+            plt.show()
+        print("\nMultiple independent variables detected. The regression equation is displayed above, but a single 2D regression line plot is only available for one predictor.")
+
+    return results, anova_table, equation_str
