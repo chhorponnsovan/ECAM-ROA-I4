@@ -96,4 +96,5 @@ def display_regression_analysis(df, y_col, X_cols):
             plt.show()
         print("\nMultiple independent variables detected. The regression equation is displayed above, but a single 2D regression line plot is only available for one predictor.")
 
-    return results, anova_table, equation_str
+    return
+
