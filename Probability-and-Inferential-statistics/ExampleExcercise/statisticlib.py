@@ -164,6 +164,42 @@ def regression_scatterplot(df, y_col, X_cols, results=None, show_plot=True):
 
     return figs
 
+def correlation(df, *cols, method='pearson', show_heatmap=False):
+    """
+    Computes and displays the correlation matrix for the specified columns.
+
+    Args:
+        df (pd.DataFrame): The input DataFrame.
+        *cols: Column names to include in the correlation matrix. If none are
+            provided, all numeric columns are used.
+        method (str): Correlation method to use ('pearson', 'spearman', 'kendall').
+        show_heatmap (bool): Whether to display a heatmap of the correlation matrix.
+
+    Returns:
+        pd.DataFrame: The correlation matrix.
+    """
+    if len(cols) == 0:
+        corr_data = df.select_dtypes(include=[np.number])
+    else:
+        corr_data = df[list(cols)]
+
+    corr_matrix = corr_data.corr(method=method)
+    print("\n--- Correlation Matrix ---")
+    print(corr_matrix.round(4).to_string())
+
+    if show_heatmap:
+        fig, ax = plt.subplots(figsize=(8, 6))
+        cax = ax.matshow(corr_matrix, cmap='coolwarm')
+        fig.colorbar(cax)
+        ax.set_xticks(range(len(corr_matrix.columns)))
+        ax.set_yticks(range(len(corr_matrix.index)))
+        ax.set_xticklabels(corr_matrix.columns, rotation=45, ha='left')
+        ax.set_yticklabels(corr_matrix.index)
+        ax.set_title('Correlation Matrix Heatmap')
+        plt.tight_layout()
+        plt.show()
+
+    return corr_matrix
 
 def regression_intervals(df, y_col, x_cols, predict_values, alpha=0.05):
     """
