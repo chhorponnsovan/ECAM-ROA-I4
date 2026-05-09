@@ -36,7 +36,7 @@ def regression_summary(df, y_col, X_cols, print_summary=True):
         print("\n--- Regression Equation ---")
         print(equation_str)
 
-    return results, anova_table, equation_str
+    return
 
 
 def regression_equation(results, y_col, X_cols):
