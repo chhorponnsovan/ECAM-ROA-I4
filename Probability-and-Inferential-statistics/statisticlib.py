@@ -1,5 +1,11 @@
 import pandas as pd
 import statsmodels.api as sm
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, r2_score
 
 def display_regression_analysis(df, y_col, X_cols):
     """
@@ -48,3 +54,43 @@ def display_regression_analysis(df, y_col, X_cols):
     print("\n--- Custom ANOVA Table ---")
     # .to_string() helps with formatting in console output
     print(anova_table.round(4).to_string())
+
+    # Plotting the scatter plot of the dependent variable vs independent variables
+    for col in X_cols:
+        plt.figure(figsize=(8, 6))
+        plt.scatter(df[col], y, color='blue', label='Data Points')
+        plt.xlabel(col)
+        plt.ylabel(y_col)
+        plt.title(f'Scatter Plot of {y_col} vs {col}')
+        plt.legend()
+        plt.grid()
+        plt.show()
+
+    # show the regression line 
+    #print y = b0 + b1*x1 + b2*x2 + ... + bn*xn
+    print("\n--- Regression Equation ---")
+    coefficients = results.params
+    equation = f"{y_col} = {coefficients[0]:.4f}"
+    for i, col in enumerate(X_cols):
+        equation += f" + ({coefficients[i+1]:.4f} * {col})"
+    print(equation)
+    # first check the xcols ifs there is only one independent variable then we can plot the regression line
+    if len(X_cols) == 1:
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        model_lr = LinearRegression()
+        model_lr.fit(X_train, y_train)
+        y_pred = model_lr.predict(X_test)
+
+        plt.figure(figsize=(8, 6))
+        plt.scatter(X_test, y_test, color='blue', label='Actual')
+        plt.plot(X_test, y_pred, color='red', label='Predicted')
+        plt.xlabel(X_cols[0])
+        plt.ylabel(y_col)
+        plt.title(f'Regression Line for {y_col} vs {X_cols[0]}')
+        plt.legend()
+        plt.grid()
+        plt.show()
+
+    ## If there are multiple independent variables, just break the loop and do not plot the regression line as it is not possible to plot in 2D
+    else:
+        print("\nMultiple independent variables detected. Skipping regression line plot.")
