@@ -6,95 +6,191 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error, r2_score
 
-def display_regression_analysis(df, y_col, X_cols):
+def regression_summary(df, y_col, X_cols, print_summary=True):
     """
-    Performs OLS regression and displays the regression summary, ANOVA table,
-    regression equation, and scatter plot(s) with regression line(s).
+    Fits an OLS regression model and returns the results, ANOVA summary,
+    and regression equation.
 
     Args:
         df (pd.DataFrame): The input DataFrame containing the data.
         y_col (str): The name of the dependent variable column.
         X_cols (list): A list of names of the independent variable columns.
+        print_summary (bool): Whether to print the summary output.
 
     Returns:
         tuple: (results, anova_table, equation_str)
     """
-    # Prepare data for statsmodels
     y = df[y_col]
-    X = df[X_cols]
-    X_sm = sm.add_constant(X)
-
-    # Create and fit the OLS model
-    model_sm = sm.OLS(y, X_sm)
+    X = sm.add_constant(df[X_cols])
+    model_sm = sm.OLS(y, X)
     results = model_sm.fit()
 
-    # Calculate ANOVA components
+    anova_table = anova_summary(results)
+    equation_str = regression_equation(results, y_col, X_cols)
+
+    if print_summary:
+        print("\n--- OLS Regression Summary ---")
+        print(results.summary())
+        print("\n--- ANOVA Summary ---")
+        print(anova_table.round(4).to_string())
+        print("\n--- Regression Equation ---")
+        print(equation_str)
+
+    return results, anova_table, equation_str
+
+
+def regression_equation(results, y_col, X_cols):
+    """
+    Builds a human-readable regression equation string from the fitted model.
+
+    Args:
+        results: The fitted statsmodels regression results object.
+        y_col (str): The name of the dependent variable.
+        X_cols (list): A list of independent variable names.
+
+    Returns:
+        str: The regression equation.
+    """
+    params = results.params
+    intercept = params.get('const', 0.0)
+    equation_parts = [f"{intercept:.4f}"]
+
+    for col in X_cols:
+        coef = params.get(col, 0.0)
+        sign = "+" if coef >= 0 else "-"
+        equation_parts.append(f"{sign} {abs(coef):.4f}*{col}")
+
+    return f"{y_col} = {' '.join(equation_parts)}"
+
+
+def anova_summary(results):
+    """
+    Creates an ANOVA table from fitted regression results.
+
+    Args:
+        results: The fitted statsmodels regression results object.
+
+    Returns:
+        pd.DataFrame: ANOVA summary table with df, SS, MS, F, and Significance F.
+    """
     df_model = results.df_model
     df_residual = results.df_resid
     df_total = df_model + df_residual
 
-    ss_model = results.ess  # Explained Sum of Squares (Regression SS)
-    ss_residual = results.ssr  # Residual Sum of Squares (Error SS)
-    ss_total = ss_model + ss_residual  # Total Sum of Squares
+    ss_model = results.ess
+    ss_residual = results.ssr
+    ss_total = ss_model + ss_residual
 
-    ms_model = ss_model / df_model
-    ms_residual = ss_residual / df_residual
+    ms_model = ss_model / df_model if df_model != 0 else np.nan
+    ms_residual = ss_residual / df_residual if df_residual != 0 else np.nan
 
-    f_statistic = results.fvalue
-    p_value_f = results.f_pvalue
-
-    # Create a DataFrame for the ANOVA table
     anova_data = {
         'df': [df_model, df_residual, df_total],
         'SS': [ss_model, ss_residual, ss_total],
         'MS': [ms_model, ms_residual, ''],
-        'F': [f_statistic, '', ''],
-        'Significance F': [p_value_f, '', '']
+        'F': [results.fvalue, '', ''],
+        'Significance F': [results.f_pvalue, '', '']
     }
-    anova_table = pd.DataFrame(anova_data, index=['Regression', 'Residual', 'Total'])
 
-    # Build regression equation string
-    equation_parts = [f"{results.params.iloc[0]:.4f}"]
-    for i, col in enumerate(X_cols):
-        coef = results.params.iloc[i + 1]
-        sign = "+" if coef >= 0 else "-"
-        equation_parts.append(f"{sign} {abs(coef):.4f}*{col}")
-    equation_str = f"{y_col} = {' '.join(equation_parts)}"
+    return pd.DataFrame(anova_data, index=['Regression', 'Residual', 'Total'])
 
-    print("\n--- OLS Regression Summary ---")
-    print(results.summary())
-    print("\n--- Custom ANOVA Table ---")
-    print(anova_table.round(4).to_string())
-    print("\n--- Regression Equation ---")
-    print(equation_str)
 
-    # Plotting scatter plot with regression line(s)
+def regression_scatterplot(df, y_col, X_cols, results=None, show_plot=True):
+    """
+    Plots scatter plot(s) of the dependent variable against each predictor and
+    overlays the regression line(s). The legend includes the regression equation.
+
+    Args:
+        df (pd.DataFrame): The input DataFrame containing the data.
+        y_col (str): The dependent variable name.
+        X_cols (list): A list of independent variable names.
+        results: Optional fitted statsmodels regression results object.
+        show_plot (bool): Whether to display the plot immediately.
+
+    Returns:
+        list: Matplotlib figure objects for the created plots.
+    """
+    if results is None:
+        _, _, _ = regression_summary(df, y_col, X_cols, print_summary=False)
+        y = df[y_col]
+        X = sm.add_constant(df[X_cols])
+        results = sm.OLS(y, X).fit()
+
+    equation_str = regression_equation(results, y_col, X_cols)
+    figs = []
+    y = df[y_col]
+
     if len(X_cols) == 1:
         col = X_cols[0]
-        plt.figure(figsize=(8, 6))
-        plt.scatter(df[col], y, color='blue', label='Data Points', alpha=0.6)
+        fig, ax = plt.subplots(figsize=(8, 6))
+        ax.scatter(df[col], y, color='blue', label='Data Points', alpha=0.6)
 
-        X_sorted = np.sort(df[col])
-        y_line = results.params.iloc[0] + results.params.iloc[1] * X_sorted
-        plt.plot(X_sorted, y_line, color='red', linewidth=2, label='Regression Line')
+        x_sorted = np.sort(df[col])
+        y_line = results.params['const'] + results.params[col] * x_sorted
+        ax.plot(x_sorted, y_line, color='red', linewidth=2, label=f'Regression Line ({equation_str})')
 
-        plt.xlabel(col)
-        plt.ylabel(y_col)
-        plt.title(f'Scatter Plot of {y_col} vs {col} with Regression Line')
-        plt.legend()
-        plt.grid(True, alpha=0.3)
-        plt.show()
+        ax.set_xlabel(col)
+        ax.set_ylabel(y_col)
+        ax.set_title(f'{y_col} vs {col} with Regression Line')
+        ax.legend(loc='best')
+        ax.grid(True, alpha=0.3)
+        figs.append(fig)
+
     else:
+        means = df[X_cols].mean()
         for col in X_cols:
-            plt.figure(figsize=(8, 6))
-            plt.scatter(df[col], y, color='blue', label='Data Points', alpha=0.6)
-            plt.xlabel(col)
-            plt.ylabel(y_col)
-            plt.title(f'Scatter Plot of {y_col} vs {col}')
-            plt.legend()
-            plt.grid(True, alpha=0.3)
-            plt.show()
-        print("\nMultiple independent variables detected. The regression equation is displayed above, but a single 2D regression line plot is only available for one predictor.")
+            fig, ax = plt.subplots(figsize=(8, 6))
+            ax.scatter(df[col], y, color='blue', label='Data Points', alpha=0.6)
 
-    return
+            x_sorted = np.sort(df[col])
+            y_line = results.params['const'] + results.params[col] * x_sorted
+
+            for other_col in X_cols:
+                if other_col != col:
+                    y_line += results.params[other_col] * means[other_col]
+
+            ax.plot(x_sorted, y_line, color='red', linewidth=2, label=f'Partial Regression Line ({equation_str})')
+            ax.set_xlabel(col)
+            ax.set_ylabel(y_col)
+            ax.set_title(f'{y_col} vs {col} with Partial Regression Line')
+            ax.legend(loc='best')
+            ax.grid(True, alpha=0.3)
+            figs.append(fig)
+
+    if show_plot:
+        for fig in figs:
+            fig.tight_layout()
+            fig.show()
+
+    return figs
+
+
+def regression_intervals(df, y_col, x_cols, predict_values, alpha=0.05):
+    """
+    Calculates confidence and prediction intervals for a new observation.
+
+    Args:
+        df (pd.DataFrame): The pandas DataFrame.
+        y_col (str): String name of the dependent variable.
+        x_cols (list): List of string names for independent variables.
+        predict_values (list): List of values corresponding to x_cols to predict for.
+        alpha (float): Significance level (default 0.05 for 95% intervals).
+
+    Returns:
+        dict: Predicted value with confidence and prediction intervals.
+    """
+    X = sm.add_constant(df[x_cols])
+    y = df[y_col]
+    model = sm.OLS(y, X).fit()
+    prediction_input = [1] + list(predict_values)
+    prediction_obj = model.get_prediction(prediction_input)
+    results_frame = prediction_obj.summary_frame(alpha=alpha)
+
+    return {
+        'Predicted Value': results_frame['mean'].iloc[0],
+        'Conf. Interval Lower': results_frame['mean_ci_lower'].iloc[0],
+        'Conf. Interval Upper': results_frame['mean_ci_upper'].iloc[0],
+        'Pred. Interval Lower': results_frame['obs_ci_lower'].iloc[0],
+        'Pred. Interval Upper': results_frame['obs_ci_upper'].iloc[0]
+    }
 
