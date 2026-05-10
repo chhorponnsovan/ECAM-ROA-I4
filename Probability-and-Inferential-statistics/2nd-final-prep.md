@@ -6,6 +6,8 @@
     - [Solution - 2](#solution---2)
   - [Exercise 3.](#exercise-3)
     - [Solution - 3](#solution---3)
+  - [Exercise 4](#exercise-4)
+    - [Solution](#solution)
 - [Table](#table)
   - [F-Distribution Table ($$\\alpha = 0.05$$)](#f-distribution-table-alpha--005)
 
@@ -215,6 +217,91 @@ Thus, there is sufficient evidence at the 0.01 significance level to conclude th
 ---
 
 
+## Exercise 4
+
+
+The *Mozart effect* refers to a boost of average performance on tests for elementary school students if the students listen to Mozart's chamber music for a period of time immediately before the test. Many educators believe that such an effect is not necessarily due to Mozart's music *per se* but rather to a relaxation period before the test.
+
+To support this belief, an elementary school teacher conducted an experiment by dividing her third-grade class of 15 students into three groups of 5 students each:
+
+* **Group 1:** Self-administered facial massage before the test.
+* **Group 2:** Listened to Mozart's chamber music for 15 minutes before the test.
+* **Group 3:** Listened to Schubert's chamber music for 15 minutes before the test.
+
+The test scores of the 15 students are given below:
+
+| Group 1 | Group 2 | Group 3 |
+| :---: | :---: | :---: |
+| 79 | 82 | 80 |
+| 81 | 84 | 81 |
+| 80 | 86 | 71 |
+| 89 | 91 | 90 |
+| 86 | 82 | 86 |
+
+Using the one-way ANOVA $$F$$-test at the $$10\%$$ level of significance, answer the following questions:
+
+a. How many treatments are in the study?
+
+b. What is the total sample size?
+
+c. What is the critical value of $$F$$?
+
+d. Write out the null hypothesis and the alternative hypothesis.
+
+e. What is your decision regarding the null hypothesis?
+
+f. Does the data provide sufficient evidence to conclude that any of the three relaxation methods performs better than the others?
+
+---
+
+### Solution
+
+**Completed ANOVA Table**
+
+First, we calculate the necessary sums and means:
+* **Group 1 Mean ($$\bar{x}_1$$):** $$83.0$$
+* **Group 2 Mean ($$\bar{x}_2$$):** $$85.0$$
+* **Group 3 Mean ($$\bar{x}_3$$):** $$81.6$$
+* **Grand Mean ($$\bar{x}_G$$):** $$83.2$$
+
+**Calculations:**
+1.  **$$SS_{Between}$$:** $$5 \times [(83.0 - 83.2)^2 + (85.0 - 83.2)^2 + (81.6 - 83.2)^2] = 29.20$$
+2.  **$$SS_{Within}$$:** Sum of squared deviations within each group = $$335.20$$
+3.  **$$MS_{Between}$$:** $$SS_{Between} / df_{Between} = 29.20 / 2 = 14.60$$
+4.  **$$MS_{Within}$$:** $$SS_{Within} / df_{Within} = 335.20 / 12 \approx 27.933$$
+5.  **$$F$$-statistic:** $$14.60 / 27.933 \approx 0.523$$
+
+| Source of Variation | Sum of Squares | df | Mean Square | F |
+| :--- | :--- | :--- | :--- | :--- |
+| Between Groups | 29.20 | 2 | 14.60 | 0.523 |
+| Within Groups | 335.20 | 12 | 27.93 | |
+| **Total** | 364.40 | 14 | | |
+
+**Answers to Questions**
+
+**a. How many treatments are in the study?**
+There are 3 treatments (Group 1, Group 2, and Group 3).
+
+**b. What is the total sample size?**
+There are 5 students in each of the 3 groups, so $$n = 15$$.
+
+**c. What is the critical value of $$F$$?**
+Using the F-distribution table with $$\alpha = 0.10$$, numerator $$df = 2$$, and denominator $$df = 12$$:
+$$F_{0.10}(2, 12) \approx 2.81$$
+
+**d. Write out the null hypothesis and the alternative hypothesis.**
+* $$H_0$$: $$\mu_1 = \mu_2 = \mu_3$$ (The mean test scores are equal for all relaxation methods)
+* $$H_1$$: At least one treatment mean is different from the others.
+
+**e. What is your decision regarding the null hypothesis?**
+Compare the calculated $$F$$ to the critical value:
+* Calculated $$F$$: $$0.523$$
+* Critical $$F$$: $$2.81$$
+
+Since the calculated $$F (0.523)$$ is less than the critical value$$(2.81)$$, we fail to reject the null hypothesis.
+
+**f. Does the data provide sufficient evidence to conclude that any of the three relaxation methods performs better than the others?**
+No. At the $$10\%$$ significance level, there is not enough evidence to conclude that there is a significant difference in performance between the relaxation methods.
 
 
 
