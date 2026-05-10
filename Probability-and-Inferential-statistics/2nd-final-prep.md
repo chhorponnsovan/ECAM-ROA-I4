@@ -145,7 +145,7 @@ We compare the calculated F-statistic from the table to the critical value:
 * Calculated $$F$$: 5.15
 * Critical $$F$$: 3.55
 
-Since the calculated $$F (5.15)$$is greater than the critical value$$(3.55)$$, we reject the null hypothesis.
+Since the calculated $$F (5.15)$$ is greater than the critical value $$(3.55)$$, we reject the null hypothesis.
 
 **f. Can we conclude that any of the treatment means differ?**
 
@@ -203,11 +203,11 @@ The decision rule for a $$p$$-value approach is:
 
 In this case: Reject $$H_0$$ if $$0.001866 \le 0.01$$ .
 
-*(Alternatively, using the critical value approach: For $$df_1 = 2, df_2 = 24$$ at $$\alpha = 0.01$$, the critical $$F$$ is approximately $$5.61$$. We reject $$H_0$$ if $$F_{calculated} > 5.61$$).*
+(Alternatively, using the critical value approach: For $$df_1 = 2, df_2 = 24$$ at $$\alpha = 0.01$$, the critical $$F$$ is approximately $$5.61$$. We reject $$H_0$$ if $$F_{calculated} > 5.61$$).
 
 **E. What is your conclusion regarding the mean miles per gallon for the three car sizes?**
 
-Since the $$p\text{-value} (0.001866)$$is less than the significance level$$\alpha (0.01)$$, we reject the null hypothesis.
+Since the $$p\text{-value} (0.001866)$$ is less than the significance level $$\alpha (0.01)$$, we reject the null hypothesis.
 
 Thus, there is sufficient evidence at the 0.01 significance level to conclude that there is a statistically significant difference in the mean fuel efficiency (miles per gallon) between compact, midsize, and large cars.
 
