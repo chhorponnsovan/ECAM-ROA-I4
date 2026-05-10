@@ -7,7 +7,9 @@
   - [Exercise 3.](#exercise-3)
     - [Solution - 3](#solution---3)
   - [Exercise 4](#exercise-4)
-    - [Solution](#solution)
+    - [Solution - 4](#solution---4)
+  - [Exercise 5](#exercise-5)
+    - [Solution - 5](#solution---5)
 - [Table](#table)
   - [F-Distribution Table ($$\\alpha = 0.05$$)](#f-distribution-table-alpha--005)
 
@@ -260,7 +262,7 @@ f. Does the data provide sufficient evidence to conclude that any of the three r
 
 ---
 
-### Solution
+### Solution - 4
 
 **Completed ANOVA Table**
 
@@ -317,6 +319,52 @@ Since the calculated $$F (0.523)$$ is less than the critical value $$(2.81)$$, w
 
 No. At the $$10\%$$ significance level, there is not enough evidence to conclude that there is a significant difference in performance between the relaxation methods.
 
+---
+---
+
+## Exercise 5
+
+Answer the following questions regarding linear regression assumptions and exploratory data analysis:
+
+5.1. How can a data professional determine whether the linearity assumption is met in a linear regression model?
+
+5.2. When and how can a data professional check the normality assumption in a regression model?
+
+5.3. A data professional uses a scatterplot to plot residuals and predicted values from a regression model to check for homoscedasticity and finds that this assumption is met. What shape do the points in the scatterplot appear as?
+
+5.4. What is the purpose of using a scatterplot matrix in exploratory data analysis?
+
+### Solution - 5
+
+**5.1. How can a data professional determine whether the linearity assumption is met in a linear regression model?**
+
+A data professional can determine linearity by creating a **Residuals vs. Fitted plot** (a scatterplot with residuals on the 
+
+-axis and predicted/fitted values on the 
+
+-axis). If the points are randomly scattered around the horizontal zero line without forming any clear curve or systematic pattern, the linearity assumption is met.
+
+**5.2. When and how can a data professional check the normality assumption in a regression model?**
+
+The normality assumption is checked **after fitting the model** by examining the distribution of the **residuals** (not the raw data). It can be checked using:
+
+ * **Normal Q-Q Plot:** If the points lie approximately along a straight diagonal line, the assumption is met.
+
+ * **Histogram of Residuals:** To visually inspect for a bell-shaped (normal) curve.
+
+ * **Statistical Tests:** Such as the Shapiro-Wilk test or the Kolmogorov-Smirnov test.
+
+
+**5.3. A data professional uses a scatterplot to plot residuals and predicted values from a regression model to check for homoscedasticity and finds that this assumption is met. What shape do the points in the scatterplot appear as?**
+
+
+When the homoscedasticity assumption is met, the points appear as a random, uniform cloud or a constant-width rectangular band. There should be no "fan" or "funnel" shape, meaning the spread of the residuals remains consistent across all predicted values.
+
+
+
+**5.4. What is the purpose of using a scatterplot matrix in exploratory data analysis?**
+
+The purpose of a scatterplot matrix is to visualize the pairwise relationships between multiple numerical variables in a dataset at once. It allows the professional to quickly identify correlations, potential linear or non-linear patterns, and outliers across all variable combinations in a single view.
 
 
 
