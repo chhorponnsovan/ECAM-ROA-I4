@@ -34,7 +34,7 @@ graph LR
 
 For the standard unity-feedback system with open-loop transfer function K G(s), the closed-loop transfer function is:
 
-$$T(s) = \frac{Y(s)}{R(s)} = \frac{K\, G(s)}{1 + K\, G(s)}$$
+$$T(s) = \frac{Y(s)}{R(s)} = \frac{K\times G(s)}{1 + K\times G(s)}$$
 
 If we express G(s) as a ratio of numerator and denominator,
 
@@ -42,7 +42,7 @@ $$G(s) = \frac{N(s)}{D(s)}$$
 
 then the closed-loop transfer function becomes:
 
-$$T(s) = \frac{K\, N(s)}{D(s) + K\, N(s)}$$
+$$T(s) = \frac{K\times N(s)}{D(s) + K\times N(s)}$$
 
 ---
 
@@ -50,10 +50,11 @@ $$T(s) = \frac{K\, N(s)}{D(s) + K\, N(s)}$$
 
 The characteristic equation is the denominator of T(s) set to zero:
 
-$$1 + K\, G(s) = 0$$
+$$1 + K\times G(s) = 0$$
 
 Using G(s) = N(s)/D(s), this becomes:
 
-$$D(s) + K\, N(s) = 0$$
+$$D(s) + K\times N(s) = 0$$
 
 This is the equation used to plot the root locus and to determine the closed-loop pole locations as K changes.
+
