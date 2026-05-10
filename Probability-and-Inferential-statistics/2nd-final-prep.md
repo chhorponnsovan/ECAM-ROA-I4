@@ -399,6 +399,8 @@ The table shows the age in years and the retail value in thousands of dollars of
 
 **6.1. Construct the scatter diagram.**
 
+![Scatter Diagram - Age vs Retail Value](scatterplotEx6.png)
+
 Plot the points with age (x) on the horizontal axis and retail value in thousands of dollars (y) on the vertical axis. The ten data points are: (2, 28.7), (3, 24.8), (3, 26.0), (3, 30.5), (4, 23.8), (4, 24.6), (5, 23.8), (5, 20.4), (5, 21.6), and (6, 22.1). The scatter diagram shows a general downward trend, suggesting that as the age of the automobile increases, its retail value tends to decrease.
 
 **6.2. Compute the linear correlation coefficient *r*. Interpret its value in the context of the problem.**
