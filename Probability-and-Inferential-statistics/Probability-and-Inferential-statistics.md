@@ -1,7 +1,5 @@
 # Probability and Inferential Statistics
-
-This file contains notes and overview for the Probability and Inferential Statistics course.
-
+Overview/Prep
 ## Inferential Statistics
 
 - [Chapter 4 Hypothesis Testing](#hypothesis-testing)
@@ -26,4 +24,6 @@ This file contains notes and overview for the Probability and Inferential Statis
 #### + [Ch07__Multiple_Regression_Analysis.pdf](Lessons/Ch07__Multiple_Regression_Analysis.pdf)
 #### + [Exercises and Answers](Excercises-and-Answers-files/)
 
+## Final Exam preparation 
+[Final Exam](#2nd-final-prep)
 
