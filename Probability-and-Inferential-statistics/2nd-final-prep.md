@@ -1,14 +1,13 @@
 # Final Preparation
 - [Final Preparation](#final-preparation)
-  - [Exercise 1.](#exercise-1)
-  - [Solution](#solution)
-    - [Completed ANOVA Table](#completed-anova-table)
+  - [Exercise - 1](#exercise---1)
+    - [Solution - 1](#solution---1)
   - [Exercise 2. The results of a one-way ANOVA are reported below.](#exercise-2-the-results-of-a-one-way-anova-are-reported-below)
-  - [Solution - 2](#solution---2)
+    - [Solution - 2](#solution---2)
 - [Table](#table)
   - [F-Distribution Table ($$\\alpha = 0.05$$)](#f-distribution-table-alpha--005)
 
-## Exercise 1. 
+## Exercise - 1 
 The following table is a partial ANOVA Table
 
 | Source | Sum of Squares | df | Mean Square | F |
@@ -33,13 +32,13 @@ e. What is your conclusion regarding the null hypothesis?
 ---
 
 
-## Solution
+### Solution - 1
 
-### Completed ANOVA Table
+The Completed ANOVA Table
 
 To complete the table, we use the following relationships:
 
-1. Degrees of Freedom for Error $$(df_{Error})$$:** $$df_{Total} - df_{Treatment} = 11 - 2 = 9$$
+1. Degrees of Freedom for Error $$(df_{Error})$$: $$df_{Total} - df_{Treatment} = 11 - 2 = 9$$
 2. Sum of Squares for Error (SSE): $$MSE \times df_{Error} = 20 \times 9 = 180$$
 3. Sum of Squares for Treatment (SST): $$SSTotal - SSE = 500 - 180 = 320$$
 4. Mean Square for Treatment (MST): $$SST / df_{Treatment} = 320 / 2 = 160$$
@@ -112,7 +111,7 @@ f. Can we conclude that any of the treatment means differ?
 
 ---
 
-## Solution - 2
+### Solution - 2
 
 **a. How many treatments are in the study?**
 
