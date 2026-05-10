@@ -1,6 +1,15 @@
 # Final Preparation
+- [Final Preparation](#final-preparation)
+  - [Exercise 1.](#exercise-1)
+  - [Solution](#solution)
+    - [Completed ANOVA Table](#completed-anova-table)
+  - [Exercise 2. The results of a one-way ANOVA are reported below.](#exercise-2-the-results-of-a-one-way-anova-are-reported-below)
+  - [Solution - 2](#solution---2)
+- [Table](#table)
+  - [F-Distribution Table ($$\\alpha = 0.05$$)](#f-distribution-table-alpha--005)
 
-## Exercise 1. The following table is a partial ANOVA Table
+## Exercise 1. 
+The following table is a partial ANOVA Table
 
 | Source | Sum of Squares | df | Mean Square | F |
 |---|---|---|---|---|
