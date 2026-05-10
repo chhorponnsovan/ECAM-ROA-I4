@@ -9,17 +9,18 @@ The following table is a **partial ANOVA table**.
 | Total | 500 | 11 |  |  |
 
 Complete the table and answer the following questions. Use the \alpha = 0.05 significance level.
-a. How many treatments are there?
-b. What is the total sample size?
-c. What is the critical value of F?
-d. Write out the null and alternative hypotheses.
-e. What is your conclusion regarding the null hypothesis?
+
+a. How many treatments are there?\n
+b. What is the total sample size?\n
+c. What is the critical value of F?\n
+d. Write out the null and alternative hypotheses.\n
+e. What is your conclusion regarding the null hypothesis?\n
 
 ## Solution
 ### Completed ANOVA Table
 To complete the table, we use the following relationships:
- 1. **Degrees of Freedom for Error (df_{Error}):** df_{Total} - df_{Treatment} = 11 - 2 = 9
- 2. **Sum of Squares for Error (SSE):** MSE \times df_{Error} = 20 \times 9 = 180
+ 1. **Degrees of Freedom for Error $$(df_{Error})$$:** $$df_{Total}$$ - $$df_{Treatment}$$ = 11 - 2 = 9
+ 2. **Sum of Squares for Error (SSE):** MSE \times $$df_{Error}$$ = 20 \times 9 = 180
  3. **Sum of Squares for Treatment (SST):** SSTotal - SSE = 500 - 180 = 320
  4. **Mean Square for Treatment (MST):** SST / df_{Treatment} = 320 / 2 = 160
  5. **F-statistic (F):** MST / MSE = 160 / 20 = 8.00
