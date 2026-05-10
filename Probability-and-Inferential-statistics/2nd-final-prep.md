@@ -436,7 +436,7 @@ To plot the line, substitute two x-values, such as x = 2 and x = 6, compute the 
 
 **6.4. Interpret the meaning of the slope of the least squares regression line in the context of the problem.**
 
-The slope b₁ ≈ −2.050 means that for each additional year of age, the predicted retail value of an automobile of this make and model **decreases by approximately $2,050** (since y is measured in thousands of dollars). In other words, on average, the car loses about $2,050 in retail value per year.
+The slope b₁ ≈ −2.050 means that for each additional year of age, the predicted retail value of an automobile of this make and model decreases by approximately $2,050(since y is measured in thousands of dollars). In other words, on average, the car loses about $2,050 in retail value per year.
 
 **6.5. Suppose a four-year-old automobile of this make and model is selected at random. Use the regression equation to predict its retail value.**
 
@@ -444,7 +444,7 @@ Substituting x = 4 into the regression equation:
 
 $$\hat{y} = -2.050(4) + 32.83 = -8.20 + 32.83 = 24.63$$
 
-The predicted retail value of a four-year-old automobile of this make and model is approximately **$24,630**.
+The predicted retail value of a four-year-old automobile of this make and model is approximately $24,630.
 
 **6.6. Suppose a 20-year-old automobile of this make and model is selected at random. Use the regression equation to predict its retail value. Interpret the result.**
 
@@ -452,11 +452,11 @@ Substituting x = 20 into the regression equation:
 
 $$\hat{y} = -2.050(20) + 32.83 = -41.00 + 32.83 = -8.17$$
 
-The regression equation predicts a retail value of approximately **−$8,170**, which is **not meaningful** because a retail value cannot be negative. This result occurs because x = 20 is far outside the range of the observed data (ages 2–6), and extrapolating the linear model beyond the data range produces unreliable and nonsensical predictions.
+The regression equation predicts a retail value of approximately −$8,170, which is not meaningful because a retail value cannot be negative. This result occurs because x = 20 is far outside the range of the observed data (ages 2–6), and extrapolating the linear model beyond the data range produces unreliable and nonsensical predictions.
 
 **6.7. Comment on the validity of using the regression equation to predict the price of a brand new automobile of this make and model.**
 
-A brand new automobile corresponds to x = 0, which is **outside the range of the sample data** (ages 2–6). Using the regression equation to predict at x = 0 is an example of **extrapolation**, which is generally not reliable. The linear relationship observed between ages 2 and 6 may not hold for a new vehicle. Therefore, the prediction would be of **questionable validity**, and the regression equation should not be used to estimate the price of a brand new automobile of this make and model.
+A brand new automobile corresponds to x = 0, which is outside the range of the sample data (ages 2–6). Using the regression equation to predict at x = 0 is an example of extrapolation, which is generally not reliable. The linear relationship observed between ages 2 and 6 may not hold for a new vehicle. Therefore, the prediction would be of questionable validity, and the regression equation should not be used to estimate the price of a brand new automobile of this make and model.
 
 
 
