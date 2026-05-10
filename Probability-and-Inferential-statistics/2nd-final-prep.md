@@ -20,6 +20,10 @@ d. Write out the null and alternative hypotheses.
 
 e. What is your conclusion regarding the null hypothesis?
 
+
+---
+
+
 ## Solution
 
 ### Completed ANOVA Table
@@ -69,12 +73,13 @@ We compare the calculated F-statistic to the critical value:
 * Calculated $$F$$: 8.00
 * Critical $$F$$: 4.26
 
-Since the calculated $$F (8.00)$$is greater than the critical value$$(4.26)$$, we reject the null hypothesis. There is sufficient evidence at the 0.05 significance level to conclude that there is a significant difference between the treatment means.
+Since the calculated $$F$$: 8.00 is greater than the critical value $$(4.26)$$, we reject the null hypothesis. There is sufficient evidence at the 0.05 significance level to conclude that there is a significant difference between the treatment means.
 
 
-## Exercise 2. One-way ANOVA Results
+---
 
-The results of a one-way ANOVA are reported below.
+
+## Exercise 2. The results of a one-way ANOVA are reported below.
 
 | Source of Variation | SS | df | MS | F |
 | :--- | :--- | :--- | :--- | :--- |
@@ -133,6 +138,10 @@ Since the calculated $$F (5.15)$$is greater than the critical value$$(3.55)$$, w
 **f. Can we conclude that any of the treatment means differ?**
 
 Yes. Because we rejected the null hypothesis, there is sufficient evidence at the 0.05 significance level to conclude that there is a statistically significant difference between at least two of the treatment means.
+
+
+---
+
 
 
 
