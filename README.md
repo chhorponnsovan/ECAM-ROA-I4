@@ -1,6 +1,6 @@
 # ECAM-ROA-I4GIM-S2
 
-A 4th year 2nd semester summary of Robotics and Automation at ECAM Lasalle at ITC Phnom Penh.
+Summary/guide of Robotics and Automation 4th year, 2nd semester at ECAM Lasalle at ITC Phnom Penh.
 
 ## Courses
 
