@@ -11,7 +11,7 @@
   - [Exercise 5](#exercise-5)
     - [Solution - 5](#solution---5)
 - [Table](#table)
-  - [F-Distribution Table ($$\\alpha = 0.05$$)](#f-distribution-table-alpha--005)
+  - [F-Distribution Table](#f-distribution-table)
 
  ---
  ---
@@ -334,15 +334,14 @@ Answer the following questions regarding linear regression assumptions and explo
 
 5.4. What is the purpose of using a scatterplot matrix in exploratory data analysis?
 
+---
+
+
 ### Solution - 5
 
 **5.1. How can a data professional determine whether the linearity assumption is met in a linear regression model?**
 
-A data professional can determine linearity by creating a **Residuals vs. Fitted plot** (a scatterplot with residuals on the 
-
--axis and predicted/fitted values on the 
-
--axis). If the points are randomly scattered around the horizontal zero line without forming any clear curve or systematic pattern, the linearity assumption is met.
+A data professional can determine linearity by creating a **Residuals vs. Fitted plot** (a scatterplot with residuals on the y-axis and predicted/fitted values on the x-axis). If the points are randomly scattered around the horizontal zero line without forming any clear curve or systematic pattern, the linearity assumption is met.
 
 **5.2. When and how can a data professional check the normality assumption in a regression model?**
 
@@ -383,7 +382,9 @@ The purpose of a scatterplot matrix is to visualize the pairwise relationships b
 
 
 # Table 
-## F-Distribution Table ($$\alpha = 0.05$$)
+## F-Distribution Table 
+
+($$\alpha = 0.05$$)
 
 | $$df_2 \setminus df_1$$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
