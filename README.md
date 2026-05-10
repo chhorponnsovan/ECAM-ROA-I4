@@ -1,7 +1,5 @@
 # ECAM-ROA-I4GIM-S2
 
-Summary/guide of Robotics and Automation 4th year, 2nd semester at ECAM Lasalle at ITC Phnom Penh.
-
 ## Courses
 
 - [Object Oriented Programming](Object-oriented-programming/Object-oriented-programming.md)
