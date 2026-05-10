@@ -26,38 +26,38 @@ e. What is your conclusion regarding the null hypothesis?
 
 ### Completed ANOVA Table
 
-    To complete the table, we use the following relationships:
+To complete the table, we use the following relationships:
 
-    1. **Degrees of Freedom for Error $$(df_{Error})$$:** $$df_{Total} - df_{Treatment} = 11 - 2 = 9$$
-    2. **Sum of Squares for Error (SSE):** $$MSE \times df_{Error} = 20 \times 9 = 180$$
-    3. **Sum of Squares for Treatment (SST):** $$SSTotal - SSE = 500 - 180 = 320$$
-    4. **Mean Square for Treatment (MST):** $$SST / df_{Treatment} = 320 / 2 = 160$$
-    5. **F-statistic (F):** $$MST / MSE = 160 / 20 = 8.00$$
+1. **Degrees of Freedom for Error $$(df_{Error})$$:** $$df_{Total} - df_{Treatment} = 11 - 2 = 9$$
+2. **Sum of Squares for Error (SSE):** $$MSE \times df_{Error} = 20 \times 9 = 180$$
+3. **Sum of Squares for Treatment (SST):** $$SSTotal - SSE = 500 - 180 = 320$$
+4. **Mean Square for Treatment (MST):** $$SST / df_{Treatment} = 320 / 2 = 160$$
+5. **F-statistic (F):** $$MST / MSE = 160 / 20 = 8.00$$
 
-    | Source | Sum of Squares | df | Mean Square | F |
-    |---|---|---|---|---|
-    | **Treatment** | 320 | 2 | 160 | 8.00 |
-    | **Error** | 180 | 9 | 20 | |
-    | **Total** | 500 | 11 | | |
+| Source | Sum of Squares | df | Mean Square | F |
+|---|---|---|---|---|
+| **Treatment** | 320 | 2 | 160 | 8.00 |
+| **Error** | 180 | 9 | 20 | |
+| **Total** | 500 | 11 | | |
 
-    **a. How many treatments are there?**
+**a. How many treatments are there?**
 
-    The degrees of freedom for treatment is $$k - 1$$, where $$k$$ is the number of treatments.
-    $$2 = k - 1 \implies k = 3$$
-    There are 3 treatments.
+The degrees of freedom for treatment is $$k - 1$$, where $$k$$ is the number of treatments.
+$$2 = k - 1 \implies k = 3$$
+There are 3 treatments.
 
-    **b. What is the total sample size?**
+**b. What is the total sample size?**
 
-    The total degrees of freedom is $$n - 1$$, where $$n$$ is the total sample size.
-    $$11 = n - 1 \implies n = 12$$
-    The total sample size is 12.
+The total degrees of freedom is $$n - 1$$, where $$n$$ is the total sample size.
+$$11 = n - 1 \implies n = 12$$
+The total sample size is 12.
 
-    **c. What is the critical value of F?**
+**c. What is the critical value of F?**
 
-    Using the F-distribution table with $$\alpha = 0.05$$, numerator $$df = 2$$, and denominator $$df = 9$$:
-    $$F_{0.05}(2, 9) \approx 4.26$$
-
-    ### F-Distribution Table ($$\alpha = 0.05$$)
+Using the F-distribution table with $$\alpha = 0.05$$, numerator $$df = 2$$, and denominator $$df = 9$$:
+$$F_{0.05}(2, 9) \approx 4.26$$
+9999999n\n\n\n\n\9999999n\n\n\n\n\ 
+### F-Distribution Table ($$\alpha = 0.05$$)
 
 | $$df_2 \setminus df_1$$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
