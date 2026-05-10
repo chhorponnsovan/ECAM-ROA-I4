@@ -1,15 +1,15 @@
 # Final Preparation
 - [Final Preparation](#final-preparation)
-  - [Exercise - 1](#exercise---1)
+  - [Exercise 1.](#exercise-1)
     - [Solution - 1](#solution---1)
-  - [Exercise 2. The results of a one-way ANOVA are reported below.](#exercise-2-the-results-of-a-one-way-anova-are-reported-below)
+  - [Exercise 2.](#exercise-2)
     - [Solution - 2](#solution---2)
   - [Exercise 3.](#exercise-3)
     - [Solution - 3](#solution---3)
 - [Table](#table)
   - [F-Distribution Table ($$\\alpha = 0.05$$)](#f-distribution-table-alpha--005)
 
-## Exercise - 1 
+## Exercise 1. 
 The following table is a partial ANOVA Table
 
 | Source | Sum of Squares | df | Mean Square | F |
@@ -89,7 +89,9 @@ Since the calculated $$F$$: 8.00 is greater than the critical value $$(4.26)$$, 
 ---
 
 
-## Exercise 2. The results of a one-way ANOVA are reported below.
+## Exercise 2. 
+
+The results of a one-way ANOVA are reported below.
 
 | Source of Variation | SS | df | MS | F |
 | :--- | :--- | :--- | :--- | :--- |
@@ -186,22 +188,22 @@ Significance Level: $$\alpha = 0.01$$
 **B. What is the value of the test statistic $$F$$?**
 
 From the ANOVA table provided:
-**$$F = 8.258752$$**
+$$F = 8.258752$$
 
 **C. What is the $$p$$-value?**
 
 From the ANOVA table provided:
-**$$p\text{-value} = 0.001866$$**
+$$p\text{-value} = 0.001866$$
 
 **D. State the decision rule at the $$\alpha = 0.01$$ level.**
 
 The decision rule for a $$p$$-value approach is:
-* **Reject $$H_0$$** if $$p\text{-value} \le \alpha$$
-* **Fail to reject $$H_0$$** if $$p\text{-value} > \alpha$$
+* Reject $$H_0$$ if $$p\text{-value} \le \alpha$$
+* Fail to reject $$H_0$$ if $$p\text{-value} > \alpha$$
 
-In this case: **Reject $$H_0$$if$$0.001866 \le 0.01$$.**
+In this case: Reject $$H_0$$ if $$0.001866 \le 0.01$$ .
 
-*(Alternatively, using the critical value approach: For $$df_1 = 2, df_2 = 24$$at$$\alpha = 0.01$$, the critical $$F$$is approximately$$5.61$$. We reject $$H_0$$if$$F_{calculated} > 5.61$$).*
+*(Alternatively, using the critical value approach: For $$df_1 = 2, df_2 = 24$$ at $$\alpha = 0.01$$, the critical $$F$$ is approximately $$5.61$$. We reject $$H_0$$ if $$F_{calculated} > 5.61$$).*
 
 **E. What is your conclusion regarding the mean miles per gallon for the three car sizes?**
 
