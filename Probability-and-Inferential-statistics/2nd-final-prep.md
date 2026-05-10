@@ -55,7 +55,105 @@ The total sample size is 12.
 Using the F-distribution table with $$\alpha = 0.05$$, numerator $$df = 2$$, and denominator $$df = 9$$:
 $$F_{0.05}(2, 9) \approx 4.26$$
 
-### F-Distribution Table ($$\alpha = 0.05$$)
+
+
+**d. Write out the null and alternative hypotheses.**
+
+* $$H_0: \mu_1 = \mu_2 = \mu_3$$ (The means of all treatments are equal)
+* $$H_1$$: At least one treatment mean is different from the others.
+
+**e. What is your conclusion regarding the null hypothesis?**
+
+We compare the calculated F-statistic to the critical value:
+
+* Calculated $$F$$: 8.00
+* Critical $$F$$: 4.26
+
+Since the calculated $$F (8.00)$$is greater than the critical value$$(4.26)$$, we reject the null hypothesis. There is sufficient evidence at the 0.05 significance level to conclude that there is a significant difference between the treatment means.
+
+
+## Exercise 2. One-way ANOVA Results
+
+The results of a one-way ANOVA are reported below.
+
+| Source of Variation | SS | df | MS | F |
+| :--- | :--- | :--- | :--- | :--- |
+| Between Groups | 6.90 | 2 | 3.45 | 5.15 |
+| Within Groups | 12.04 | 18 | 0.67 | |
+| Total | 18.94 | 20 | | |
+
+Answer the following questions.
+
+a. How many treatments are in the study?
+
+b. What is the total sample size?
+
+c. What is the critical value of $$F$$? (Using $$\alpha = 0.05$$)
+
+d. Write out the null hypothesis and the alternative hypothesis.
+
+e. What is your decision regarding the null hypothesis?
+
+f. Can we conclude that any of the treatment means differ?
+
+---
+
+## Solution - 2
+
+**a. How many treatments are in the study?**
+
+The degrees of freedom for Between Groups is $$k - 1$$, where $$k$$ is the number of treatments (groups).
+$$2 = k - 1 \implies k = 3$$
+There are 3 treatments in the study.
+
+**b. What is the total sample size?**
+
+The total degrees of freedom is $$n - 1$$, where $$n$$ is the total sample size.
+$$20 = n - 1 \implies n = 21$$
+The total sample size is 21.
+
+**c. What is the critical value of $$F$$?**
+
+Using an F-distribution table with $$\alpha = 0.05$$, numerator degrees of freedom ($$df_{Between}$$) = 2, and denominator degrees of freedom ($$df_{Within}$$) = 18:
+$$F_{0.05}(2, 18) = 3.55$$
+
+**d. Write out the null hypothesis and the alternative hypothesis.**
+
+* $$H_0$$: $$\mu_1 = \mu_2 = \mu_3$$ (The means of all treatments are equal)
+* $$H_1$$: At least one treatment mean is different from the others.
+
+**e. What is your decision regarding the null hypothesis?**
+
+We compare the calculated F-statistic from the table to the critical value:
+* Calculated $$F$$: 5.15
+* Critical $$F$$: 3.55
+
+Since the calculated $$F (5.15)$$is greater than the critical value$$(3.55)$$, we reject the null hypothesis.
+
+**f. Can we conclude that any of the treatment means differ?**
+
+Yes. Because we rejected the null hypothesis, there is sufficient evidence at the 0.05 significance level to conclude that there is a statistically significant difference between at least two of the treatment means.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Table 
+## F-Distribution Table ($$\alpha = 0.05$$)
 
 | $$df_2 \setminus df_1$$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -79,20 +177,3 @@ $$F_{0.05}(2, 9) \approx 4.26$$
 | **18** | 4.41 | 3.55 | 3.16 | 2.93 | 2.77 | 2.66 | 2.58 | 2.51 | 2.46 | 2.41 |
 | **19** | 4.38 | 3.52 | 3.13 | 2.90 | 2.74 | 2.63 | 2.54 | 2.48 | 2.42 | 2.38 |
 | **20** | 4.35 | 3.49 | 3.10 | 2.87 | 2.71 | 2.60 | 2.51 | 2.45 | 2.39 | 2.35 |
-
-
-
-**d. Write out the null and alternative hypotheses.**
-
-* $$H_0: \mu_1 = \mu_2 = \mu_3$$ (The means of all treatments are equal)
-* $$H_1$$: At least one treatment mean is different from the others.
-
-**e. What is your conclusion regarding the null hypothesis?**
-
-We compare the calculated F-statistic to the critical value:
-
-* Calculated $$F$$: 8.00
-* Critical $$F$$: 4.26
-
-Since the calculated $$F (8.00)$$is greater than the critical value$$(4.26)$$, we reject the null hypothesis. There is sufficient evidence at the 0.05 significance level to conclude that there is a significant difference between the treatment means.
-
