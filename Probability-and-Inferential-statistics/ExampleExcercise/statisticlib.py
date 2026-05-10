@@ -2,9 +2,7 @@ import pandas as pd
 import statsmodels.api as sm
 import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score
+
 
 def regression_summary(df, y_col, X_cols, print_summary=True):
     """
@@ -22,11 +20,38 @@ def regression_summary(df, y_col, X_cols, print_summary=True):
     """
     y = df[y_col]
     X = sm.add_constant(df[X_cols])
-    model_sm = sm.OLS(y, X)
-    results = model_sm.fit()
+    results = sm.OLS(y, X).fit()
 
-    anova_table = anova_summary(results)
-    equation_str = regression_equation(results, y_col, X_cols)
+    # --- Build ANOVA table inline ---
+    df_model = results.df_model
+    df_residual = results.df_resid
+    df_total = df_model + df_residual
+    ss_model = results.ess
+    ss_residual = results.ssr
+    ss_total = ss_model + ss_residual
+    ms_model = ss_model / df_model if df_model != 0 else np.nan
+    ms_residual = ss_residual / df_residual if df_residual != 0 else np.nan
+
+    anova_table = pd.DataFrame(
+        {
+            'df': [df_model, df_residual, df_total],
+            'SS': [ss_model, ss_residual, ss_total],
+            'MS': [ms_model, ms_residual, ''],
+            'F': [results.fvalue, '', ''],
+            'Significance F': [results.f_pvalue, '', ''],
+        },
+        index=['Regression', 'Residual', 'Total'],
+    )
+
+    # --- Build equation string inline ---
+    params = results.params
+    intercept = params.get('const', 0.0)
+    parts = [f"{intercept:.4f}"]
+    for col in X_cols:
+        coef = params.get(col, 0.0)
+        sign = "+" if coef >= 0 else "-"
+        parts.append(f"{sign} {abs(coef):.4f}*{col}")
+    equation_str = f"{y_col} = {' '.join(parts)}"
 
     if print_summary:
         print("\n--- OLS Regression Summary ---")
@@ -36,12 +61,12 @@ def regression_summary(df, y_col, X_cols, print_summary=True):
         print("\n--- Regression Equation ---")
         print(equation_str)
 
-    return
+    return results, anova_table, equation_str
 
 
 def regression_equation(results, y_col, X_cols):
     """
-    Builds a human-readable regression equation string from the fitted model.
+    Builds a human-readable regression equation string from a fitted model.
 
     Args:
         results: The fitted statsmodels regression results object.
@@ -53,19 +78,17 @@ def regression_equation(results, y_col, X_cols):
     """
     params = results.params
     intercept = params.get('const', 0.0)
-    equation_parts = [f"{intercept:.4f}"]
-
+    parts = [f"{intercept:.4f}"]
     for col in X_cols:
         coef = params.get(col, 0.0)
         sign = "+" if coef >= 0 else "-"
-        equation_parts.append(f"{sign} {abs(coef):.4f}*{col}")
-
-    return f"{y_col} = {' '.join(equation_parts)}"
+        parts.append(f"{sign} {abs(coef):.4f}*{col}")
+    return f"{y_col} = {' '.join(parts)}"
 
 
 def anova_summary(results):
     """
-    Creates an ANOVA table from fitted regression results.
+    Creates an ANOVA table from a fitted regression results object.
 
     Args:
         results: The fitted statsmodels regression results object.
@@ -76,59 +99,63 @@ def anova_summary(results):
     df_model = results.df_model
     df_residual = results.df_resid
     df_total = df_model + df_residual
-
     ss_model = results.ess
     ss_residual = results.ssr
     ss_total = ss_model + ss_residual
-
     ms_model = ss_model / df_model if df_model != 0 else np.nan
     ms_residual = ss_residual / df_residual if df_residual != 0 else np.nan
 
-    anova_data = {
-        'df': [df_model, df_residual, df_total],
-        'SS': [ss_model, ss_residual, ss_total],
-        'MS': [ms_model, ms_residual, ''],
-        'F': [results.fvalue, '', ''],
-        'Significance F': [results.f_pvalue, '', '']
-    }
+    return pd.DataFrame(
+        {
+            'df': [df_model, df_residual, df_total],
+            'SS': [ss_model, ss_residual, ss_total],
+            'MS': [ms_model, ms_residual, ''],
+            'F': [results.fvalue, '', ''],
+            'Significance F': [results.f_pvalue, '', ''],
+        },
+        index=['Regression', 'Residual', 'Total'],
+    )
 
-    return pd.DataFrame(anova_data, index=['Regression', 'Residual', 'Total'])
 
-
-def regression_scatterplot(df, y_col, X_cols, results=None, show_plot=True):
+def regression_scatterplot(df, y_col, X_cols, show_plot=True):
     """
-    Plots scatter plot(s) of the dependent variable against each predictor and
-    overlays the regression line(s). The legend includes the regression equation.
+    Fits an OLS model internally, then plots scatter plot(s) of the dependent
+    variable against each predictor and overlays the regression line(s).
+    The legend includes the regression equation.
 
     Args:
         df (pd.DataFrame): The input DataFrame containing the data.
         y_col (str): The dependent variable name.
         X_cols (list): A list of independent variable names.
-        results: Optional fitted statsmodels regression results object.
-        show_plot (bool): Whether to display the plot immediately.
+        show_plot (bool): Whether to display the plot(s) immediately.
 
     Returns:
         list: Matplotlib figure objects for the created plots.
     """
-    if results is None:
-        _, _, _ = regression_summary(df, y_col, X_cols, print_summary=False)
-        y = df[y_col]
-        X = sm.add_constant(df[X_cols])
-        results = sm.OLS(y, X).fit()
-
-    equation_str = regression_equation(results, y_col, X_cols)
-    figs = []
     y = df[y_col]
+    X = sm.add_constant(df[X_cols])
+    results = sm.OLS(y, X).fit()
+
+    # Build equation string inline
+    params = results.params
+    intercept = params.get('const', 0.0)
+    parts = [f"{intercept:.4f}"]
+    for col in X_cols:
+        coef = params.get(col, 0.0)
+        sign = "+" if coef >= 0 else "-"
+        parts.append(f"{sign} {abs(coef):.4f}*{col}")
+    equation_str = f"{y_col} = {' '.join(parts)}"
+
+    figs = []
 
     if len(X_cols) == 1:
         col = X_cols[0]
         fig, ax = plt.subplots(figsize=(8, 6))
         ax.scatter(df[col], y, color='blue', label='Data Points', alpha=0.6)
-
         x_sorted = np.sort(df[col])
-        y_line = results.params['const'] + results.params[col] * x_sorted
-        ax.plot(x_sorted, y_line, color='red', linewidth=2, label=f'Regression Line ({equation_str})')
-
+        y_line = params['const'] + params[col] * x_sorted
+        ax.plot(x_sorted, y_line, color='red', linewidth=2,
+                label=f'Regression Line ({equation_str})')
         ax.set_xlabel(col)
         ax.set_ylabel(y_col)
         ax.set_title(f'{y_col} vs {col} with Regression Line')
@@ -141,15 +168,13 @@ def regression_scatterplot(df, y_col, X_cols, results=None, show_plot=True):
         for col in X_cols:
             fig, ax = plt.subplots(figsize=(8, 6))
             ax.scatter(df[col], y, color='blue', label='Data Points', alpha=0.6)
-
             x_sorted = np.sort(df[col])
-            y_line = results.params['const'] + results.params[col] * x_sorted
-
+            y_line = params['const'] + params[col] * x_sorted
             for other_col in X_cols:
                 if other_col != col:
-                    y_line += results.params[other_col] * means[other_col]
-
-            ax.plot(x_sorted, y_line, color='red', linewidth=2, label=f'Partial Regression Line ({equation_str})')
+                    y_line += params[other_col] * means[other_col]
+            ax.plot(x_sorted, y_line, color='red', linewidth=2,
+                    label=f'Partial Regression Line ({equation_str})')
             ax.set_xlabel(col)
             ax.set_ylabel(y_col)
             ax.set_title(f'{y_col} vs {col} with Partial Regression Line')
@@ -160,9 +185,10 @@ def regression_scatterplot(df, y_col, X_cols, results=None, show_plot=True):
     if show_plot:
         for fig in figs:
             fig.tight_layout()
-            fig.show()
+            plt.show()
 
     return figs
+
 
 def correlation(df, *cols, method='pearson', show_heatmap=False):
     """
@@ -170,20 +196,16 @@ def correlation(df, *cols, method='pearson', show_heatmap=False):
 
     Args:
         df (pd.DataFrame): The input DataFrame.
-        *cols: Column names to include in the correlation matrix. If none are
-            provided, all numeric columns are used.
-        method (str): Correlation method to use ('pearson', 'spearman', 'kendall').
+        *cols: Column names to include. If none provided, all numeric columns are used.
+        method (str): Correlation method ('pearson', 'spearman', 'kendall').
         show_heatmap (bool): Whether to display a heatmap of the correlation matrix.
 
     Returns:
         pd.DataFrame: The correlation matrix.
     """
-    if len(cols) == 0:
-        corr_data = df.select_dtypes(include=[np.number])
-    else:
-        corr_data = df[list(cols)]
-
+    corr_data = df[list(cols)] if cols else df.select_dtypes(include=[np.number])
     corr_matrix = corr_data.corr(method=method)
+
     print("\n--- Correlation Matrix ---")
     print(corr_matrix.round(4).to_string())
 
@@ -201,15 +223,16 @@ def correlation(df, *cols, method='pearson', show_heatmap=False):
 
     return corr_matrix
 
+
 def regression_intervals(df, y_col, x_cols, predict_values, alpha=0.05):
     """
     Calculates confidence and prediction intervals for a new observation.
 
     Args:
-        df (pd.DataFrame): The pandas DataFrame.
-        y_col (str): String name of the dependent variable.
-        x_cols (list): List of string names for independent variables.
-        predict_values (list): List of values corresponding to x_cols to predict for.
+        df (pd.DataFrame): The input DataFrame.
+        y_col (str): The dependent variable column name.
+        x_cols (list): List of independent variable column names.
+        predict_values (list): Values for each x_col to predict at.
         alpha (float): Significance level (default 0.05 for 95% intervals).
 
     Returns:
@@ -223,10 +246,9 @@ def regression_intervals(df, y_col, x_cols, predict_values, alpha=0.05):
     results_frame = prediction_obj.summary_frame(alpha=alpha)
 
     return {
-        'Predicted Value': results_frame['mean'].iloc[0],
+        'Predicted Value':      results_frame['mean'].iloc[0],
         'Conf. Interval Lower': results_frame['mean_ci_lower'].iloc[0],
         'Conf. Interval Upper': results_frame['mean_ci_upper'].iloc[0],
         'Pred. Interval Lower': results_frame['obs_ci_lower'].iloc[0],
-        'Pred. Interval Upper': results_frame['obs_ci_upper'].iloc[0]
+        'Pred. Interval Upper': results_frame['obs_ci_upper'].iloc[0],
     }
-
