@@ -10,6 +10,8 @@
     - [Solution - 4](#solution---4)
   - [Exercise 5](#exercise-5)
     - [Solution - 5](#solution---5)
+  - [Exercise 6](#exercise-6)
+    - [Solution - 6](#solution---6)
 - [Table](#table)
   - [F-Distribution Table](#f-distribution-table)
 
@@ -345,7 +347,7 @@ A data professional can determine linearity by creating a **Residuals vs. Fitted
 
 **5.2. When and how can a data professional check the normality assumption in a regression model?**
 
-The normality assumption is checked **after fitting the model** by examining the distribution of the **residuals** (not the raw data). It can be checked using:
+The normality assumption is checked after fitting the model by examining the distribution of the residuals (not the raw data). It can be checked using:
 
  * **Normal Q-Q Plot:** If the points lie approximately along a straight diagonal line, the assumption is met.
 
@@ -365,8 +367,95 @@ When the homoscedasticity assumption is met, the points appear as a random, unif
 
 The purpose of a scatterplot matrix is to visualize the pairwise relationships between multiple numerical variables in a dataset at once. It allows the professional to quickly identify correlations, potential linear or non-linear patterns, and outliers across all variable combinations in a single view.
 
+---
+---
 
 
+## Exercise 6
+
+The table shows the age in years and the retail value in thousands of dollars of a random sample of ten automobiles of the same make and model.
+
+| x | 2 | 3 | 3 | 3 | 4 | 4 | 5 | 5 | 5 | 6 |
+|---|---|---|---|---|---|---|---|---|---|---|
+| y | 28.7 | 24.8 | 26.0 | 30.5 | 23.8 | 24.6 | 23.8 | 20.4 | 21.6 | 22.1 |
+
+6.1. Construct the scatter diagram.
+
+6.2. Compute the linear correlation coefficient *r*. Interpret its value in the context of the problem.
+
+6.3. Compute the least squares regression line. Plot it on the scatter diagram.
+
+6.4. Interpret the meaning of the slope of the least squares regression line in the context of the problem.
+
+6.5. Suppose a four-year-old automobile of this make and model is selected at random. Use the regression equation to predict its retail value.
+
+6.6. Suppose a 20-year-old automobile of this make and model is selected at random. Use the regression equation to predict its retail value. Interpret the result.
+
+6.7. Comment on the validity of using the regression equation to predict the price of a brand new automobile of this make and model.
+
+---
+
+### Solution - 6
+
+**6.1. Construct the scatter diagram.**
+
+Plot the points with age (x) on the horizontal axis and retail value in thousands of dollars (y) on the vertical axis. The ten data points are: (2, 28.7), (3, 24.8), (3, 26.0), (3, 30.5), (4, 23.8), (4, 24.6), (5, 23.8), (5, 20.4), (5, 21.6), and (6, 22.1). The scatter diagram shows a general downward trend, suggesting that as the age of the automobile increases, its retail value tends to decrease.
+
+**6.2. Compute the linear correlation coefficient *r*. Interpret its value in the context of the problem.**
+
+First, compute the necessary sums from the data (n = 10):
+
+- Σx = 2 + 3 + 3 + 3 + 4 + 4 + 5 + 5 + 5 + 6 = **40**
+- Σy = 28.7 + 24.8 + 26.0 + 30.5 + 23.8 + 24.6 + 23.8 + 20.4 + 21.6 + 22.1 = **246.3**
+- Σx² = 4 + 9 + 9 + 9 + 16 + 16 + 25 + 25 + 25 + 36 = **174**
+- Σy² = 823.69 + 615.04 + 676.0 + 930.25 + 566.44 + 605.16 + 566.44 + 416.16 + 466.56 + 488.41 = **6154.15**
+- Σxy = 57.4 + 74.4 + 78.0 + 91.5 + 95.2 + 98.4 + 119.0 + 102.0 + 108.0 + 132.6 = **956.5**
+
+Using the formula:
+
+$$r = \frac{n\Sigma xy - (\Sigma x)(\Sigma y)}{\sqrt{[n\Sigma x^2 - (\Sigma x)^2][n\Sigma y^2 - (\Sigma y)^2]}}$$
+
+$$r = \frac{10(956.5) - (40)(246.3)}{\sqrt{[10(174) - (40)^2][10(6154.15) - (246.3)^2]}}$$
+
+$$r = \frac{9565 - 9852}{\sqrt{[1740 - 1600][61541.5 - 60663.69]}} = \frac{-287}{\sqrt{140 \times 877.81}} = \frac{-287}{\sqrt{122893.4}} \approx \frac{-287}{350.56} \approx \mathbf{-0.819}$$
+
+**Interpretation:** The value r ≈ −0.819 indicates a strong negative linear correlation between the age of the automobile and its retail value. This means that as the age of the automobile increases, its retail value tends to decrease significantly.
+
+**6.3. Compute the least squares regression line. Plot it on the scatter diagram.**
+
+The regression line has the form ŷ = b₁x + b₀, where:
+
+$$b_1 = \frac{n\Sigma xy - (\Sigma x)(\Sigma y)}{n\Sigma x^2 - (\Sigma x)^2} = \frac{-287}{140} \approx -2.050$$
+
+$$b_0 = \bar{y} - b_1\bar{x} = \frac{246.3}{10} - (-2.050)\frac{40}{10} = 24.63 + 8.20 = 32.83$$
+
+**Regression line: ŷ = −2.050x + 32.83**
+
+To plot the line, substitute two x-values, such as x = 2 and x = 6, compute the corresponding ŷ values, and draw a straight line through those two points on the scatter diagram.
+
+**6.4. Interpret the meaning of the slope of the least squares regression line in the context of the problem.**
+
+The slope b₁ ≈ −2.050 means that for each additional year of age, the predicted retail value of an automobile of this make and model **decreases by approximately $2,050** (since y is measured in thousands of dollars). In other words, on average, the car loses about $2,050 in retail value per year.
+
+**6.5. Suppose a four-year-old automobile of this make and model is selected at random. Use the regression equation to predict its retail value.**
+
+Substituting x = 4 into the regression equation:
+
+$$\hat{y} = -2.050(4) + 32.83 = -8.20 + 32.83 = 24.63$$
+
+The predicted retail value of a four-year-old automobile of this make and model is approximately **$24,630**.
+
+**6.6. Suppose a 20-year-old automobile of this make and model is selected at random. Use the regression equation to predict its retail value. Interpret the result.**
+
+Substituting x = 20 into the regression equation:
+
+$$\hat{y} = -2.050(20) + 32.83 = -41.00 + 32.83 = -8.17$$
+
+The regression equation predicts a retail value of approximately **−$8,170**, which is **not meaningful** because a retail value cannot be negative. This result occurs because x = 20 is far outside the range of the observed data (ages 2–6), and extrapolating the linear model beyond the data range produces unreliable and nonsensical predictions.
+
+**6.7. Comment on the validity of using the regression equation to predict the price of a brand new automobile of this make and model.**
+
+A brand new automobile corresponds to x = 0, which is **outside the range of the sample data** (ages 2–6). Using the regression equation to predict at x = 0 is an example of **extrapolation**, which is generally not reliable. The linear relationship observed between ages 2 and 6 may not hold for a new vehicle. Therefore, the prediction would be of **questionable validity**, and the regression equation should not be used to estimate the price of a brand new automobile of this make and model.
 
 
 
