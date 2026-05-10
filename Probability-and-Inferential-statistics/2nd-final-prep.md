@@ -286,12 +286,18 @@ First, we calculate the necessary sums and means:
 **Answers to Questions**
 
 **a. How many treatments are in the study?**
+
+
 There are 3 treatments (Group 1, Group 2, and Group 3).
 
 **b. What is the total sample size?**
+
+
 There are 5 students in each of the 3 groups, so $$n = 15$$.
 
 **c. What is the critical value of $$F$$?**
+
+
 Using the F-distribution table with $$\alpha = 0.10$$, numerator $$df = 2$$, and denominator $$df = 12$$:
 $$F_{0.10}(2, 12) \approx 2.81$$
 
@@ -307,6 +313,8 @@ Compare the calculated $$F$$ to the critical value:
 Since the calculated $$F (0.523)$$ is less than the critical value $$(2.81)$$, we fail to reject the null hypothesis.
 
 **f. Does the data provide sufficient evidence to conclude that any of the three relaxation methods performs better than the others?**
+
+
 No. At the $$10\%$$ significance level, there is not enough evidence to conclude that there is a significant difference in performance between the relaxation methods.
 
 
