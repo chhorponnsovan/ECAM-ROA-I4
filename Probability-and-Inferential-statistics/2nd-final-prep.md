@@ -4,6 +4,8 @@
     - [Solution - 1](#solution---1)
   - [Exercise 2. The results of a one-way ANOVA are reported below.](#exercise-2-the-results-of-a-one-way-anova-are-reported-below)
     - [Solution - 2](#solution---2)
+  - [Exercise 3.](#exercise-3)
+    - [Solution - 3](#solution---3)
 - [Table](#table)
   - [F-Distribution Table ($$\\alpha = 0.05$$)](#f-distribution-table-alpha--005)
 
@@ -146,6 +148,66 @@ Since the calculated $$F (5.15)$$is greater than the critical value$$(3.55)$$, w
 **f. Can we conclude that any of the treatment means differ?**
 
 Yes. Because we rejected the null hypothesis, there is sufficient evidence at the 0.05 significance level to conclude that there is a statistically significant difference between at least two of the treatment means.
+
+
+---
+
+
+## Exercise 3. 
+**Fuel Efficiency ANOVA Analysis**
+
+The fuel efficiencies for a sample of 27 compact, midsize, and large cars are analyzed using ANOVA to investigate whether there is a difference in the mean miles per gallon (MPG) for the three car sizes.
+
+Significance Level: $$\alpha = 0.01$$
+
+**Summary Statistics**
+| Group | Sample Size | Sum | Average | Variance |
+| :--- | :--- | :--- | :--- | :--- |
+| Compact | 12 | 268.3 | 22.35833 | 9.388106 |
+| Midsize | 9 | 172.4 | 19.15556 | 7.315278 |
+| Large | 6 | 100.5 | 16.75 | 7.303 |
+
+**ANOVA Table**
+| Source of Variation | SS | df | MS | F | p-value |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| Between Groups | 136.4803 | 2 | 68.24014 | 8.258752 | 0.001866 |
+| Within Groups | 198.3064 | 24 | 8.262766 | | |
+| Total | 334.7867 | 26 | | | |
+
+---
+
+### Solution - 3
+
+**A. State the null hypothesis and the alternative hypothesis.**
+
+* **$$H_0$$:** $$\mu_{Compact} = \mu_{Midsize} = \mu_{Large}$$ (The mean fuel efficiency is the same for all three car sizes)
+* **$$H_1$$:** At least one of the mean fuel efficiencies is different from the others.
+
+**B. What is the value of the test statistic $$F$$?**
+
+From the ANOVA table provided:
+**$$F = 8.258752$$**
+
+**C. What is the $$p$$-value?**
+
+From the ANOVA table provided:
+**$$p\text{-value} = 0.001866$$**
+
+**D. State the decision rule at the $$\alpha = 0.01$$ level.**
+
+The decision rule for a $$p$$-value approach is:
+* **Reject $$H_0$$** if $$p\text{-value} \le \alpha$$
+* **Fail to reject $$H_0$$** if $$p\text{-value} > \alpha$$
+
+In this case: **Reject $$H_0$$if$$0.001866 \le 0.01$$.**
+
+*(Alternatively, using the critical value approach: For $$df_1 = 2, df_2 = 24$$at$$\alpha = 0.01$$, the critical $$F$$is approximately$$5.61$$. We reject $$H_0$$if$$F_{calculated} > 5.61$$).*
+
+**E. What is your conclusion regarding the mean miles per gallon for the three car sizes?**
+
+Since the $$p\text{-value} (0.001866)$$is less than the significance level$$\alpha (0.01)$$, we reject the null hypothesis.
+
+Thus, there is sufficient evidence at the 0.01 significance level to conclude that there is a statistically significant difference in the mean fuel efficiency (miles per gallon) between compact, midsize, and large cars.
 
 
 ---
