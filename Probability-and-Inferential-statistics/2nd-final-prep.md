@@ -12,6 +12,10 @@
     - [Solution - 5](#solution---5)
   - [Exercise 6](#exercise-6)
     - [Solution - 6](#solution---6)
+  - [Exercise 7](#exercise-7)
+    - [Solution - 7](#solution---7)
+  - [Exercise 8](#exercise-8)
+    - [Solution - 8](#solution---8)
 - [Statistical Tables](#statistical-tables)
   - [F-Distribution Table](#f-distribution-table)
     - [$df\_2 = 1$ to $10$](#df_2--1-to-10)
@@ -460,11 +464,259 @@ The regression equation predicts a retail value of approximately −$8,170, whic
 A brand new automobile corresponds to x = 0, which is outside the range of the sample data (ages 2–6). Using the regression equation to predict at x = 0 is an example of extrapolation, which is generally not reliable. The linear relationship observed between ages 2 and 6 may not hold for a new vehicle. Therefore, the prediction would be of questionable validity, and the regression equation should not be used to estimate the price of a brand new automobile of this make and model.
 
 
+---
+---------------------
+
+## Exercise 7
+
+A study by the American Realtors Association investigated the relationship between the commissions earned by sales associates last year and the number of months since the associates earned their real estate licences. Also of interest in the study is the gender of the sales associate. Below is a portion of the regression output. The dependent variable is commissions, which is reported in $000, and the independent variables are months since the license was earned and gender (female = 1 and male = 0).
+
+**Regression Analysis Output:**
+
+*Regression Statistics*
+
+| Statistic | Value |
+|---|---|
+| Multiple R | 0.801 |
+| R Square | 0.642 |
+| Adjusted R Square | 0.600 |
+| Standard Error | 3.219 |
+| Observations | 20 |
+
+*ANOVA*
+
+| | df | SS | MS | F | p-value |
+|---|---|---|---|---|---|
+| Regression | 2 | 315.9291 | 157.9645 | 15.2468 | 0.0002 |
+| Residual | 17 | 176.1284 | 10.36049 | | |
+| Total | 19 | 492.0575 | | | |
+
+*Coefficients*
+
+| | Coefficients | Standard Error | t Stat | p-value |
+|---|---|---|---|---|
+| Intercept | 15.7625 | 3.0782 | 5.121 | .0001 |
+| Months | 0.4415 | 0.0839 | 5.262 | .0001 |
+| Gender | 3.8598 | 1.4724 | 2.621 | .0179 |
+
+7A. Write out the regression equation. How much commission would you expect a female agent to make who earned her license 30 months ago?
+
+7B. Do the female agents on average make more or less than the male agents? How much more?
+
+7C. Conduct a test of hypothesis to determine if the independent variable gender should be included in the analysis. Use the .05 significance level. What is your conclusion?
+
+---
+
+### Solution - 7
+
+**7A. Write out the regression equation. How much commission would you expect a female agent to make who earned her license 30 months ago?**
+
+Using the coefficients from the output, the regression equation is:
+
+$$\hat{y} = 15.7625 + 0.4415 \cdot \text{Months} + 3.8598 \cdot \text{Gender}$$
+
+where ŷ is the predicted commission in $000, Months is the number of months since the license was earned, and Gender = 1 for female, 0 for male.
+
+For a female agent (Gender = 1) who earned her license 30 months ago (Months = 30):
+
+$$\hat{y} = 15.7625 + 0.4415(30) + 3.8598(1)$$
+
+$$\hat{y} = 15.7625 + 13.245 + 3.8598 = 32.8673$$
+
+The expected commission for a female agent who earned her license 30 months ago is approximately $32,867.30.
+
+**7B. Do the female agents on average make more or less than the male agents? How much more?**
+
+The Gender variable is coded as female = 1 and male = 0. The coefficient for Gender is 3.8598, which is positive.
+
+This means that, holding the number of months constant, female agents earn **more** than male agents on average. The difference is the Gender coefficient:
+
+$$\Delta\hat{y} = 3.8598 \times (1 - 0) = 3.8598$$
+
+Female agents earn on average $3,859.80 more in commissions than male agents with the same number of months since licensure.
+
+**7C. Conduct a test of hypothesis to determine if the independent variable gender should be included in the analysis. Use the .05 significance level. What is your conclusion?**
+
+We test whether the Gender coefficient is significantly different from zero:
+
+- **H₀:** β_Gender = 0 (Gender does not contribute to the model)
+- **H₁:** β_Gender ≠ 0 (Gender does contribute to the model)
+
+From the regression output:
+
+| | Value |
+|---|---|
+| Coefficient (b) | 3.8598 |
+| Standard Error | 1.4724 |
+| t Stat | 2.621 |
+| p-value | 0.0179 |
+
+Decision Rule: Reject H₀ if p-value < α = 0.05.
+
+Decision: Since p-value = 0.0179 < 0.05, we reject H₀.
+
+Conclusion: At the .05 significance level, there is sufficient evidence that the Gender variable is a significant predictor of commissions earned. Gender should be included in the regression model.
 
 
 
+---
+---
 
 
+## Exercise 8
+
+The administrator of a new paralegal program at Seagate Technical College wants to estimate the grade point average in the new program. He thought that high school GPA, the verbal score on the Scholastic Aptitude Test (SAT), and the mathematics score on the SAT would be good predictors of paralegal GPA. The data on nine students are:
+
+| Student | High School GPA | SAT Verbal | SAT Math | Paralegal GPA |
+|---|---|---|---|---|
+| 1 | 3.25 | 480 | 410 | 3.21 |
+| 2 | 1.80 | 290 | 270 | 1.68 |
+| 3 | 2.89 | 420 | 410 | 3.58 |
+| 4 | 3.81 | 500 | 600 | 3.92 |
+| 5 | 3.13 | 500 | 490 | 3.00 |
+| 6 | 2.81 | 430 | 460 | 2.82 |
+| 7 | 2.20 | 320 | 490 | 1.65 |
+| 8 | 2.14 | 530 | 480 | 2.30 |
+| 9 | 2.63 | 469 | 440 | 2.33 |
+
+8A. Consider the following correlation matrix. Which variable has the strongest correlation with the dependent variable? Some of the correlations among the independent variables are strong. Does this appear to be a problem?
+
+| | Paralegal GPA | High School GPA | SAT Verbal |
+|---|---|---|---|
+| High School GPA | 0.911 | | |
+| SAT Verbal | 0.616 | 0.609 | |
+| SAT Math | 0.487 | 0.636 | 0.599 |
+
+8B. Consider the following output. Compute the coefficient of multiple determination.
+
+8C. Conduct a global test of hypothesis from the preceding output. Does it appear that any of the regression coefficients are not equal to zero?
+
+8D. Conduct a test of hypothesis on each independent variable. Would you consider eliminating the variables SAT Verbal and "SAT Math"? Let α = 0.05.
+
+**Regression Output (Full Model — 3 predictors):**
+
+```
+The regression equation is:
+Paralegal GPA = −0.411 + 1.20 HSGPA + 0.00163 SAT_Verbal − 0.00194 SAT_Math
+```
+
+| Predictor | Coef | SE Coef | T | P |
+|---|---|---|---|---|
+| Constant | −0.4111 | 0.7823 | −0.53 | 0.622 |
+| HSGPA | 1.2014 | 0.2955 | 4.07 | 0.010 |
+| SAT_Verbal | 0.001629 | 0.002147 | 0.76 | 0.482 |
+| SAT_Math | −0.001939 | 0.002074 | −0.94 | 0.393 |
+
+| Source | DF | SS | MS | F | P |
+|---|---|---|---|---|---|
+| Regression | 3 | 4.3595 | 1.4532 | 10.33 | 0.014 |
+| Residual Error | 5 | 0.7036 | 0.1407 | | |
+| Total | 8 | 5.0631 | | | |
+
+| Source | DF | Seq SS |
+|---|---|---|
+| HSGPA | 1 | 4.2061 |
+| SAT_Verbal | 1 | 0.0303 |
+| SAT_Math | 1 | 0.1231 |
+
+8E. The analysis has been rerun without SAT Verbal and "SAT Math". See the following output. Compute the coefficient of determination. How much has R² changed from the previous analysis?
+
+**Regression Output (Reduced Model — HSGPA only):**
+
+```
+The regression equation is:
+Paralegal GPA = −0.454 + 1.16 HSGPA
+```
+
+| Predictor | Coef | SE Coef | T | P |
+|---|---|---|---|---|
+| Constant | −0.4542 | 0.5542 | −0.82 | 0.439 |
+| HSGPA | 1.1589 | 0.1977 | 5.86 | 0.001 |
+
+| Source | DF | SS | MS | F | P |
+|---|---|---|---|---|---|
+| Regression | 1 | 4.2061 | 4.2061 | 34.35 | 0.001 |
+| Residual Error | 7 | 0.8570 | 0.1224 | | |
+| Total | 8 | 5.0631 | | | |
+
+8F. Following is a histogram of the residuals. Does the normality assumption for the residuals seem reasonable?
+
+8G. Following is a plot of the residuals and the ŷ values. Do you see any violation of the assumptions?
+
+---
+
+### Solution - 8
+
+**8A. Which variable has the strongest correlation with the dependent variable? Does multicollinearity appear to be a problem?**
+
+From the correlation matrix, **High School GPA** has the strongest correlation with Paralegal GPA, with r = **0.911** — a very strong positive linear relationship. SAT Verbal (r = 0.616) and SAT Math (r = 0.487) have moderate correlations with the dependent variable.
+
+Regarding multicollinearity: the correlations among the independent variables are moderately strong (HSGPA–SAT Math: 0.636; HSGPA–SAT Verbal: 0.609; SAT Verbal–SAT Math: 0.599). This **does suggest a potential multicollinearity problem**, as the predictors are correlated with each other. This can inflate standard errors and make it difficult to isolate the individual effect of each variable, which may explain why SAT Verbal and SAT Math are not statistically significant in the full model despite having some correlation with the outcome.
+
+**8B. Compute the coefficient of multiple determination.**
+
+The coefficient of multiple determination R² is computed from the ANOVA output of the full model:
+
+$$R^2 = \frac{SS_{\text{Regression}}}{SS_{\text{Total}}} = \frac{4.3595}{5.0631} \approx \mathbf{0.861}$$
+
+This means that approximately **86.1%** of the variation in Paralegal GPA is explained by the three independent variables (High School GPA, SAT Verbal, and SAT Math) together.
+
+**8C. Conduct a global test of hypothesis. Does it appear that any of the regression coefficients are not equal to zero?**
+
+- **H₀:** β₁ = β₂ = β₃ = 0 (none of the independent variables are useful predictors)
+- **H₁:** At least one βᵢ ≠ 0 (at least one variable is a useful predictor)
+
+From the ANOVA output of the full model:
+
+| | Value |
+|---|---|
+| F statistic | 10.33 |
+| p-value | 0.014 |
+| α | 0.05 |
+
+**Decision:** Since p-value = 0.014 < α = 0.05, we **reject H₀**.
+
+**Conclusion:** At the .05 significance level, there is sufficient evidence to conclude that at least one of the regression coefficients is not equal to zero. The overall regression model is statistically significant.
+
+**8D. Conduct a test of hypothesis on each independent variable. Would you consider eliminating SAT Verbal and SAT Math? Let α = 0.05.**
+
+Testing each predictor individually (H₀: βᵢ = 0 vs. H₁: βᵢ ≠ 0):
+
+| Predictor | Coefficient | t Stat | p-value | Decision (α = 0.05) |
+|---|---|---|---|---|
+| HSGPA | 1.2014 | 4.07 | 0.010 | Reject H₀ — **significant** |
+| SAT_Verbal | 0.001629 | 0.76 | 0.482 | Fail to reject H₀ — **not significant** |
+| SAT_Math | −0.001939 | −0.94 | 0.393 | Fail to reject H₀ — **not significant** |
+
+Since both SAT Verbal (p = 0.482) and SAT Math (p = 0.393) have p-values well above 0.05, we **would consider eliminating both variables** from the model. Only High School GPA is a statistically significant predictor.
+
+**8E. Compute the coefficient of determination for the reduced model. How much has R² changed?**
+
+From the reduced model (HSGPA only):
+
+$$R^2_{\text{reduced}} = \frac{SS_{\text{Regression}}}{SS_{\text{Total}}} = \frac{4.2061}{5.0631} \approx \mathbf{0.831}$$
+
+Comparing the two models:
+
+| Model | R² |
+|---|---|
+| Full model (HSGPA + SAT Verbal + SAT Math) | 0.861 |
+| Reduced model (HSGPA only) | 0.831 |
+| Change in R² | −0.030 |
+
+R² decreased by only **0.030 (3.0 percentage points)** after removing both SAT variables. This is a very small drop, which confirms that SAT Verbal and SAT Math contributed very little additional explanatory power beyond what High School GPA already provides. The simpler reduced model is therefore preferred.
+
+**8F. Does the normality assumption for the residuals seem reasonable?**
+
+The histogram of residuals from the reduced model shows that the majority of residuals are clustered near zero, with a roughly symmetric, bell-shaped appearance. While the sample size is small (n = 9), there is no strong evidence of severe skewness or outliers. It is **reasonable to conclude that the normality assumption has been met**, though the small sample limits how confidently we can assess this.
+
+**8G. Do you see any violation of the assumptions in the residuals vs. ŷ plot?**
+
+The residuals vs. fitted values (ŷ) plot shows the points scattered **randomly** around the zero line with no clear pattern, funnel shape, or curve. There is no strong evidence of heteroscedasticity (non-constant variance) or non-linearity. The assumptions of **linearity** and **equal variance (homoscedasticity)** appear to be reasonably satisfied.
+
+
+___
+------
 
 
 
