@@ -11,6 +11,9 @@
 - [Table](#table)
   - [F-Distribution Table ($$\\alpha = 0.05$$)](#f-distribution-table-alpha--005)
 
+ ---
+ ---
+
 ## Exercise 1. 
 The following table is a partial ANOVA Table
 
@@ -89,6 +92,7 @@ Since the calculated $$F$$: 8.00 is greater than the critical value $$(4.26)$$, 
 
 
 ---
+---
 
 
 ## Exercise 2. 
@@ -155,6 +159,7 @@ Yes. Because we rejected the null hypothesis, there is sufficient evidence at th
 
 
 ---
+---
 
 
 ## Exercise 3. 
@@ -214,6 +219,7 @@ Since the $$p\text{-value} (0.001866)$$ is less than the significance level $$\a
 Thus, there is sufficient evidence at the 0.01 significance level to conclude that there is a statistically significant difference in the mean fuel efficiency (miles per gallon) between compact, midsize, and large cars.
 
 
+---
 ---
 
 
@@ -298,7 +304,7 @@ Compare the calculated $$F$$ to the critical value:
 * Calculated $$F$$: $$0.523$$
 * Critical $$F$$: $$2.81$$
 
-Since the calculated $$F (0.523)$$ is less than the critical value$$(2.81)$$, we fail to reject the null hypothesis.
+Since the calculated $$F (0.523)$$ is less than the critical value $$(2.81)$$, we fail to reject the null hypothesis.
 
 **f. Does the data provide sufficient evidence to conclude that any of the three relaxation methods performs better than the others?**
 No. At the $$10\%$$ significance level, there is not enough evidence to conclude that there is a significant difference in performance between the relaxation methods.
