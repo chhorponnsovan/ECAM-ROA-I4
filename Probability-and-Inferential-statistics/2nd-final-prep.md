@@ -4,13 +4,7 @@ title: 2nd-Semester-Final-Preparation
 ---
 
 # Final Preparation
-
 ---
----
-
-<b><p style="font-size: 36px; text-align: center;">Table of Content</p></b>
-
-
 - [Final Preparation](#final-preparation)
   - [Exercise 1.](#exercise-1)
   - [Exercise 2.](#exercise-2)
