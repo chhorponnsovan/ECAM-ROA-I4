@@ -192,6 +192,7 @@ The fuel efficiencies for a sample of 27 compact, midsize, and large cars are an
 Significance Level: $$\alpha = 0.01$$
 
 **Summary Statistics**
+
 | Group | Sample Size | Sum | Average | Variance |
 | :--- | :--- | :--- | :--- | :--- |
 | Compact | 12 | 268.3 | 22.35833 | 9.388106 |
@@ -199,6 +200,7 @@ Significance Level: $$\alpha = 0.01$$
 | Large | 6 | 100.5 | 16.75 | 7.303 |
 
 **ANOVA Table**
+
 | Source of Variation | SS | df | MS | F | p-value |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | Between Groups | 136.4803 | 2 | 68.24014 | 8.258752 | 0.001866 |
