@@ -1,6 +1,6 @@
 ---
 layout: default
-title: My Page
+title: 2nd-Semester-Final-Preparation
 ---
 
 # Final Preparation
