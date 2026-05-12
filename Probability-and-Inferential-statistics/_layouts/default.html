@@ -1,17 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>{{ page.title }}</title>
+
+  <!-- MathJax Configuration -->
   <script>
     MathJax = {
       tex: {
-        inlineMath: [['\\(', '\\)']],
-        displayMath: [['\\[', '\\]']]
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
       }
     };
   </script>
 
+  <!-- MathJax Library -->
   <script async
     src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
   </script>
@@ -19,6 +24,8 @@
 </head>
 
 <body>
+
   {{ content }}
+
 </body>
 </html>
