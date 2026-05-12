@@ -4,27 +4,32 @@ title: 2nd-Semester-Final-Preparation
 ---
 
 # Final Preparation
+
+---
+---
+
+<b><p style="font-size: 36px; text-align: center;">Table of Content</p></b>
+
+
 - [Final Preparation](#final-preparation)
-  - [Exercise 1.](#exercise-1) [Solution - 1](#solution---1)
-  - [Exercise 2.](#exercise-2) [Solution - 2](#solution---2)
-  - [Exercise 3.](#exercise-3) [Solution - 3](#solution---3)
-  - [Exercise 4](#exercise-4) [Solution - 4](#solution---4)
-  - [Exercise 5](#exercise-5) [Solution - 5](#solution---5)
-  - [Exercise 6](#exercise-6) [Solution - 6](#solution---6)
-  - [Exercise 7](#exercise-7) [Solution - 7](#solution---7)
-  - [Exercise 8](#exercise-8) [Solution - 8](#solution---8)
+  - [Exercise 1.](#exercise-1)
+  - [Exercise 2.](#exercise-2)
+  - [Exercise 3.](#exercise-3)
+  - [Exercise 4](#exercise-4)
+  - [Exercise 5](#exercise-5)
+  - [Exercise 6](#exercise-6)
+  - [Exercise 7](#exercise-7)
+  - [Exercise 8](#exercise-8)
 - [Statistical Tables — Final Preparation](#statistical-tables--final-preparation)
-  - [1. F-Distribution Critical Values](#1-f-distribution-critical-values)
-    - [F-Table — α = 0.05](#f-table--α--005)
-    - [F-Table — α = 0.01](#f-table--α--001)
-    - [F-Table — α = 0.10](#f-table--α--010)
-  - [2. t-Distribution Critical Values (Two-Tailed)](#2-t-distribution-critical-values-two-tailed)
-  - [3. Pearson Correlation Critical Values (Two-Tailed)](#3-pearson-correlation-critical-values-two-tailed)
+  - [F-Distribution Critical Values](#f-distribution-critical-values)
+  - [t-Distribution Critical Values (Two-Tailed)](#t-distribution-critical-values-two-tailed)
+  - [Pearson Correlation Critical Values (Two-Tailed)](#pearson-correlation-critical-values-two-tailed)
 - [Formula Sheet — Final Preparation](#formula-sheet--final-preparation)
-  - [1. One-Way ANOVA](#1-one-way-anova)
-  - [2. Simple Linear Regression](#2-simple-linear-regression)
-  - [3. Multiple Linear Regression](#3-multiple-linear-regression)
-  - [4. Global F-Test (Multiple Regression)](#4-global-f-test-multiple-regression)
+    - [1. One-Way ANOVA](#1-one-way-anova)
+    - [2. Simple Linear Regression](#2-simple-linear-regression)
+    - [3. Multiple Linear Regression](#3-multiple-linear-regression)
+    - [4. Global F-Test (Multiple Regression)](#4-global-f-test-multiple-regression)
+
 
 
  ---
@@ -55,7 +60,7 @@ e. What is your conclusion regarding the null hypothesis?
 ---
 
 
-### Solution - 1
+Solution - 1
 
 The Completed ANOVA Table
 
@@ -95,6 +100,7 @@ $$F_{0.05}(2, 9) \approx 4.26$$
 **d. Write out the null and alternative hypotheses.**
 
 * $$H_0: \mu_1 = \mu_2 = \mu_3$$ (The means of all treatments are equal)
+
 * $$H_1$$: At least one treatment mean is different from the others.
 
 **e. What is your conclusion regarding the null hypothesis?**
@@ -137,7 +143,7 @@ f. Can we conclude that any of the treatment means differ?
 
 ---
 
-### Solution - 2
+Solution - 2
 
 **a. How many treatments are in the study?**
 
@@ -201,7 +207,7 @@ Significance Level: $$\alpha = 0.01$$
 
 ---
 
-### Solution - 3
+Solution - 3
 
 **A. State the null hypothesis and the alternative hypothesis.**
 
@@ -276,7 +282,7 @@ f. Does the data provide sufficient evidence to conclude that any of the three r
 
 ---
 
-### Solution - 4
+Solution - 4
 
 **Completed ANOVA Table**
 
@@ -351,7 +357,7 @@ Answer the following questions regarding linear regression assumptions and explo
 ---
 
 
-### Solution - 5
+Solution - 5
 
 **5.1. How can a data professional determine whether the linearity assumption is met in a linear regression model?**
 
@@ -407,7 +413,7 @@ The table shows the age in years and the retail value in thousands of dollars of
 
 ---
 
-### Solution - 6
+Solution - 6
 
 **6.1. Construct the scatter diagram.**
 
@@ -514,7 +520,7 @@ A study by the American Realtors Association investigated the relationship betwe
 
 ---
 
-### Solution - 7
+Solution - 7
 
 **7A. Write out the regression equation. How much commission would you expect a female agent to make who earned her license 30 months ago?**
 
@@ -652,7 +658,7 @@ Paralegal GPA = −0.454 + 1.16 HSGPA
 
 ---
 
-### Solution - 8
+Solution - 8
 
 **8A. Which variable has the strongest correlation with the dependent variable? Does multicollinearity appear to be a problem?**
 
@@ -733,7 +739,7 @@ ___
 
 ---
 
-## 1. F-Distribution Critical Values
+## F-Distribution Critical Values
 
 > **How to use:** Find the row for $df_2$ (denominator = $df_{\text{Error}}$) and the column for $df_1$ (numerator = $df_{\text{Treatment}}$ or $df_{\text{Regression}}$). Reject $H_0$ if your computed $F$ exceeds the table value.
 
@@ -850,7 +856,7 @@ ___
 
 ---
 
-## 2. t-Distribution Critical Values (Two-Tailed)
+## t-Distribution Critical Values (Two-Tailed)
 
 > **How to use:** Find the row for your degrees of freedom $df = n - k - 1$ and the column for your significance level $\alpha$. Reject $H_0$ if $|t| > t_{\alpha, df}$.
 
@@ -889,7 +895,7 @@ ___
 
 ---
 
-## 3. Pearson Correlation Critical Values (Two-Tailed)
+## Pearson Correlation Critical Values (Two-Tailed)
 
 > **How to use:** Compute $df = n - 2$ where $n$ is the number of data pairs. Find the row for your $df$ and the column for your $\alpha$. The correlation $r$ is statistically significant if $|r| > r_{\text{critical}}$.
 
@@ -1031,7 +1037,7 @@ $$s_e = \sqrt{\frac{SS_{\text{Error}}}{n - k - 1}} = \sqrt{MS_{\text{Error}}}$$
 
 ---
 
-## 4. Global F-Test (Multiple Regression)
+### 4. Global F-Test (Multiple Regression)
 
 $$F = \frac{SS_{\text{Regression}} / k}{SS_{\text{Error}} / (n - k - 1)} = \frac{MS_{\text{Regression}}}{MS_{\text{Error}}}$$
 
