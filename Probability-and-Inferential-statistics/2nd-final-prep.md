@@ -1,3 +1,8 @@
+---
+layout: default
+title: My Page
+---
+
 # Final Preparation
 - [Final Preparation](#final-preparation)
   - [Exercise 1.](#exercise-1)
