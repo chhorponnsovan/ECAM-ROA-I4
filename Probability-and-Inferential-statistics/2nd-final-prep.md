@@ -5,22 +5,14 @@ title: 2nd-Semester-Final-Preparation
 
 # Final Preparation
 - [Final Preparation](#final-preparation)
-  - [Exercise 1.](#exercise-1)
-    - [Solution - 1](#solution---1)
-  - [Exercise 2.](#exercise-2)
-    - [Solution - 2](#solution---2)
-  - [Exercise 3.](#exercise-3)
-    - [Solution - 3](#solution---3)
-  - [Exercise 4](#exercise-4)
-    - [Solution - 4](#solution---4)
-  - [Exercise 5](#exercise-5)
-    - [Solution - 5](#solution---5)
-  - [Exercise 6](#exercise-6)
-    - [Solution - 6](#solution---6)
-  - [Exercise 7](#exercise-7)
-    - [Solution - 7](#solution---7)
-  - [Exercise 8](#exercise-8)
-    - [Solution - 8](#solution---8)
+  - [Exercise 1.](#exercise-1) [Solution - 1](#solution---1)
+  - [Exercise 2.](#exercise-2) [Solution - 2](#solution---2)
+  - [Exercise 3.](#exercise-3) [Solution - 3](#solution---3)
+  - [Exercise 4](#exercise-4) [Solution - 4](#solution---4)
+  - [Exercise 5](#exercise-5) [Solution - 5](#solution---5)
+  - [Exercise 6](#exercise-6) [Solution - 6](#solution---6)
+  - [Exercise 7](#exercise-7) [Solution - 7](#solution---7)
+  - [Exercise 8](#exercise-8) [Solution - 8](#solution---8)
 - [Statistical Tables — Final Preparation](#statistical-tables--final-preparation)
   - [1. F-Distribution Critical Values](#1-f-distribution-critical-values)
     - [F-Table — α = 0.05](#f-table--α--005)
@@ -767,7 +759,7 @@ ___
 
 ---
 
-### F-Table — α = 0.05
+ **F-Table — α = 0.05**
 
 | $df_2$ \ $df_1$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -804,7 +796,7 @@ ___
 
 ---
 
-### F-Table — α = 0.01
+ **F-Table — α = 0.01**
 
 | $df_2$ \ $df_1$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -841,7 +833,7 @@ ___
 
 ---
 
-### F-Table — α = 0.10
+**F-Table — α = 0.10**
 
 | $df_2$ \ $df_1$ | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 |
 |---|---|---|---|---|---|---|---|---|---|---|
@@ -963,9 +955,9 @@ ___
 
 ---
 
-## 1. One-Way ANOVA
+### 1. One-Way ANOVA
 
-### Sum of Squares
+ **Sum of Squares**
 
 $$SS_{\text{Total}} = \sum_{i=1}^{k}\sum_{j=1}^{n_i}(x_{ij} - \bar{\bar{x}})^2$$
 
@@ -973,7 +965,7 @@ $$SS_{\text{Treatment}} = \sum_{i=1}^{k} n_i(\bar{x}_i - \bar{\bar{x}})^2$$
 
 $$SS_{\text{Error}} = SS_{\text{Total}} - SS_{\text{Treatment}}$$
 
-### Degrees of Freedom
+**Degrees of Freedom**
 
 $$df_{\text{Treatment}} = k - 1$$
 
@@ -983,17 +975,17 @@ $$df_{\text{Total}} = n_T - 1$$
 
 where $k$ = number of treatments and $n_T$ = total sample size.
 
-### Mean Squares
+**Mean Squares**
 
 $$MS_{\text{Treatment}} = \frac{SS_{\text{Treatment}}}{df_{\text{Treatment}}}$$
 
 $$MS_{\text{Error}} = \frac{SS_{\text{Error}}}{df_{\text{Error}}}$$
 
-### F Test Statistic
+**F Test Statistic**
 
 $$F = \frac{MS_{\text{Treatment}}}{MS_{\text{Error}}}$$
 
-### ANOVA Table Structure
+**ANOVA Table Structure**
 
 | Source | SS | df | MS | F |
 |---|---|---|---|---|
@@ -1001,35 +993,35 @@ $$F = \frac{MS_{\text{Treatment}}}{MS_{\text{Error}}}$$
 | Error | $SS_E$ | $n_T - k$ | $MS_E$ | |
 | Total | $SS_{\text{Total}}$ | $n_T - 1$ | | |
 
-### Decision Rule
+**Decision Rule**
 
 Reject $H_0$ if $F > F_{\alpha, \, df_{\text{Treatment}}, \, df_{\text{Error}}}$
 
 ---
 
-## 2. Simple Linear Regression
+### 2. Simple Linear Regression
 
-### Regression Line
+**Regression Line**
 
 $$\hat{y} = b_0 + b_1 x$$
 
-### Slope
+**Slope**
 
 $$b_1 = \frac{n\sum xy - (\sum x)(\sum y)}{n\sum x^2 - (\sum x)^2}$$
 
-### Intercept
+**Intercept**
 
 $$b_0 = \bar{y} - b_1\bar{x}$$
 
-### Linear Correlation Coefficient
+**Linear Correlation Coefficient**
 
 $$r = \frac{n\sum xy - (\sum x)(\sum y)}{\sqrt{\left[n\sum x^2 - (\sum x)^2\right]\left[n\sum y^2 - (\sum y)^2\right]}}$$
 
-### Coefficient of Determination
+**Coefficient of Determination**
 
 $$r^2 = \frac{SS_{\text{Regression}}}{SS_{\text{Total}}}$$
 
-### Sum of Squares
+**Sum of Squares**
 
 $$SS_{\text{Total}} = \sum(y - \bar{y})^2$$
 
@@ -1039,21 +1031,21 @@ $$SS_{\text{Error}} = \sum(y - \hat{y})^2 = SS_{\text{Total}} - SS_{\text{Regres
 
 ---
 
-## 3. Multiple Linear Regression
+### 3. Multiple Linear Regression
 
-### Regression Equation
+**Regression Equation**
 
 $$\hat{y} = b_0 + b_1 x_1 + b_2 x_2 + \cdots + b_k x_k$$
 
-### Coefficient of Multiple Determination
+**Coefficient of Multiple Determination**
 
 $$R^2 = \frac{SS_{\text{Regression}}}{SS_{\text{Total}}}$$
 
-### Adjusted R-Squared
+**Adjusted R-Squared**
 
 $$R^2_{\text{adj}} = 1 - \frac{SS_{\text{Error}} / (n - k - 1)}{SS_{\text{Total}} / (n - 1)}$$
 
-### Standard Error of the Estimate
+**Standard Error of the Estimate**
 
 $$s_e = \sqrt{\frac{SS_{\text{Error}}}{n - k - 1}} = \sqrt{MS_{\text{Error}}}$$
 
@@ -1067,7 +1059,7 @@ $$F = \frac{SS_{\text{Regression}} / k}{SS_{\text{Error}} / (n - k - 1)} = \frac
 - $H_1$: At least one $\beta_i \neq 0$
 - Reject $H_0$ if $F > F_{\alpha,\, k,\, n-k-1}$ or if $p\text{-value} < \alpha$
 
-### ANOVA Table (Multiple Regression)
+**ANOVA Table (Multiple Regression)**
 
 | Source | SS | df | MS | F |
 |---|---|---|---|---|
@@ -1077,7 +1069,7 @@ $$F = \frac{SS_{\text{Regression}} / k}{SS_{\text{Error}} / (n - k - 1)} = \frac
 
 ---
 
-## 5. Individual Coefficient t-Test (Multiple Regression)
+**5. Individual Coefficient t-Test (Multiple Regression)**
 
 $$t = \frac{b_i}{s_{b_i}}$$
 
@@ -1088,7 +1080,7 @@ $$t = \frac{b_i}{s_{b_i}}$$
 
 ---
 
-## 6. Correlation Matrix
+**6. Correlation Matrix**
 
 The Pearson correlation between any two variables $x$ and $y$:
 
@@ -1096,7 +1088,7 @@ $$r_{xy} = \frac{\sum(x_i - \bar{x})(y_i - \bar{y})}{\sqrt{\sum(x_i-\bar{x})^2 \
 
 ---
 
-## 7. Residuals
+**7. Residuals**
 
 $$e_i = y_i - \hat{y}_i$$
 
@@ -1107,7 +1099,7 @@ Used to check:
 
 ---
 
-## 8. Means and Grand Mean (ANOVA)
+**8. Means and Grand Mean (ANOVA)**
 
 $$\bar{x}_i = \frac{\sum_{j=1}^{n_i} x_{ij}}{n_i} \qquad \text{(treatment mean)}$$
 
