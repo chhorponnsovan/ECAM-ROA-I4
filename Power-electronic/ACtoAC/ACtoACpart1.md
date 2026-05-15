@@ -157,7 +157,7 @@ $$V_{rms} = \sqrt{\frac{V_m^2}{2\pi} \left( 2\pi - 2\alpha + \sin(2\alpha) \righ
 
 $$V_{rms} = V_m \sqrt{\frac{1}{\pi} \left( \pi - \alpha + \frac{\sin(2\alpha)}{2} \right)}$$
 
-![L_LOD2.png](L_LOD2.png)
+![L_LOD2_RESULT.png](L_LOD2_RESULT.png)
 
 ---
 
