@@ -29,9 +29,9 @@ $$ V_{rms} = \sqrt{\frac{V_m^2}{4\pi} \left[ \left[ \omega t - \frac{\sin(2\omeg
 
 Evaluating the limits:
 
-- $$ \left[ \omega t - \frac{\sin(2\omega t)}{2} \right]_{\alpha}^{\pi} = (\pi - 0) - \left( \alpha - \frac{\sin(2\alpha)}{2} \right) = \pi - \alpha + \frac{\sin(2\alpha)}{2} $$
+$$ \left[ \omega t - \frac{\sin(2\omega t)}{2} \right]_{\alpha}^{\pi} = (\pi - 0) - \left( \alpha - \frac{\sin(2\alpha)}{2} \right) = \pi - \alpha + \frac{\sin(2\alpha)}{2} $$
 
-- $$ \left[ \omega t - \frac{\sin(2\omega t)}{2} \right]_{\pi}^{2\pi} = (2\pi - 0) - (\pi - 0) = \pi $$
+$$ \left[ \omega t - \frac{\sin(2\omega t)}{2} \right]_{\pi}^{2\pi} = (2\pi - 0) - (\pi - 0) = \pi $$
 
 Combining the terms:
 
@@ -123,13 +123,13 @@ Applying KVL for proper discontinuous operation:
 
 $$ V_m \sin(\omega t) = L \frac{di}{dt} $$
 
-When the firing angle is $$ \alpha > 90^\circ $$ ($$ \alpha > \frac{\pi}{2} $$):
+When the firing angle is $$\alpha > 90^\circ $$ ($$ \alpha > \frac{\pi}{2}$$ ):
 
 $$ \gamma = 2(\pi - \alpha) < \pi $$
 
-The current drops back to zero naturally before the opposing thyristor fires ($$ \beta < \pi + \alpha $$), maintaining independent control of each half-cycle. 
+The current drops back to zero naturally before the opposing thyristor fires ( $$ \beta < \pi + \alpha $$ ), maintaining independent control of each half-cycle. 
 
-The output voltage follows the input line voltage exclusively during the conduction periods from $$ \alpha $$ to $$ 2\pi - \alpha $$ across a semi-cycle period of $$ \pi $$:
+The output voltage follows the input line voltage exclusively during the conduction periods from $$ \alpha $$ to $$ 2\pi - \alpha $$ across a semi-cycle period of $$ \pi $$ :
 
 $$ V_{rms} = \sqrt{\frac{1}{\pi} \int_{\alpha}^{2\pi - \alpha} V_m^2 \sin^2(\omega t) \, d(\omega t)} $$
 
