@@ -20,6 +20,10 @@ ID: e20220873
 
 ![R_LOAD1](R_LOAD1.png)
 
+
+The graphical results after simulation:
+
+
 ![R_LOAD1_RESULT](R_LOAD1_RESULT.png)
 
 Input Voltage:
@@ -48,7 +52,6 @@ $$ V_{rms} = \sqrt{\frac{V_m^2}{4\pi} \left[ \pi - \alpha + \frac{\sin(2\alpha)}
 $$ V_{rms} = \frac{V_m}{2} \sqrt{\frac{1}{\pi} \left( 2\pi - \alpha + \frac{\sin(2\alpha)}{2} \right)} $$
 
 
-The graphical results after simulation:
 
 
 
@@ -58,6 +61,8 @@ The graphical results after simulation:
 
 
 ![R_LOAD2](R_LOAD2.png)
+
+The graphical results after simulation:
 
 ![R_LOAD2_RESULT](R_LOAD2_RESULT.png)
 
@@ -78,7 +83,7 @@ $$ V_{rms} = \sqrt{\frac{V_m^2}{2\pi} \left( \pi - \alpha + \frac{\sin(2\alpha)}
 $$ V_{rms} = \frac{V_m}{\sqrt{2}} \sqrt{\frac{1}{\pi} \left( \pi - \alpha + \frac{\sin(2\alpha)}{2} \right)} $$
 
 
-The graphical results after simulation:
+
 
 
 
@@ -91,6 +96,8 @@ The graphical results after simulation:
 
 
 ![L_LOD1](L_LOD1.png)
+
+The graphical results after simulation:
 
 ![L_LOD1result.png](L_LOD1_RESULT.png)
 
@@ -130,6 +137,8 @@ $$V_{rms} = \frac{V_m}{\sqrt{2}}$$
 
 
 ![L_LOD2](L_LOD2.png)
+
+The graphical results after simulation:
 
 ![L_LOD2_RESULT.png](L_LOD2_RESULT.png)
 
