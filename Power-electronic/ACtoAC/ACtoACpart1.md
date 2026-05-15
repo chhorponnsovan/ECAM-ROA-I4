@@ -20,6 +20,8 @@ ID: e20220873
 
 ![R_LOAD1](R_LOAD1.png)
 
+![R_LOAD1_RESULT](R_LOAD1_RESULT.png)
+
 Input Voltage:
 $$V_s(\omega t) = V_m \sin(\omega t)$$
 
@@ -48,7 +50,7 @@ $$ V_{rms} = \frac{V_m}{2} \sqrt{\frac{1}{\pi} \left( 2\pi - \alpha + \frac{\sin
 
 The graphical results after simulation:
 
-![R_LOAD1_RESULT](R_LOAD1_RESULT.png)
+
 
 ---
 
@@ -56,6 +58,8 @@ The graphical results after simulation:
 
 
 ![R_LOAD2](R_LOAD2.png)
+
+![R_LOAD2_RESULT](R_LOAD2_RESULT.png)
 
 For a fully controlled configuration with a symmetric firing angle $$\alpha$$ for the forward thyristor and $$\pi + \alpha$$ for the reverse thyristor:
 
@@ -77,7 +81,7 @@ $$ V_{rms} = \frac{V_m}{\sqrt{2}} \sqrt{\frac{1}{\pi} \left( \pi - \alpha + \fra
 The graphical results after simulation:
 
 
-![R_LOAD2_RESULT](R_LOAD2_RESULT.png)
+
 
 ---
 
@@ -87,6 +91,8 @@ The graphical results after simulation:
 
 
 ![L_LOD1](L_LOD1.png)
+
+![L_LOD1result.png](L_LOD1_RESULT.png)
 
 Applying Kirchhoff's Voltage Law (KVL) during conduction:
 
@@ -116,7 +122,7 @@ Consequently, the output voltage matches the input waveform continuously:
 
 $$V_{rms} = \frac{V_m}{\sqrt{2}}$$
 
-![L_LOD1result.png](L_LOD1_RESULT.png)
+
 
 ---
 
@@ -124,6 +130,8 @@ $$V_{rms} = \frac{V_m}{\sqrt{2}}$$
 
 
 ![L_LOD2](L_LOD2.png)
+
+![L_LOD2_RESULT.png](L_LOD2_RESULT.png)
 
 Applying KVL for proper discontinuous operation:
 
@@ -157,7 +165,7 @@ $$V_{rms} = \sqrt{\frac{V_m^2}{2\pi} \left( 2\pi - 2\alpha + \sin(2\alpha) \righ
 
 $$V_{rms} = V_m \sqrt{\frac{1}{\pi} \left( \pi - \alpha + \frac{\sin(2\alpha)}{2} \right)}$$
 
-![L_LOD2_RESULT.png](L_LOD2_RESULT.png)
+
 
 ---
 
