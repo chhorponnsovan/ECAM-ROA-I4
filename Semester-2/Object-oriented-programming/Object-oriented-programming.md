@@ -2,7 +2,7 @@
 
 This file contains reviews for the Object Oriented Programming course.
 
-The Java quiz review section below is generated automatically from the `.java` files in this folder. When you add new quiz files, run `python generate_review.py` and the review content will refresh.
+The Java quiz review section below is generated automatically from the `.java` files in this folder. When you add new quiz files, run `python generate_review.py` and the review content will refresh. (if anyone were to clone this lmfao)
 
 <!-- BEGIN JAVA QUIZ REVIEW -->
 ## Java Quiz Review
