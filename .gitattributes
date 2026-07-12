@@ -5,7 +5,10 @@
 *.rar filter=lfs diff=lfs merge=lfs -text
 *.pdf filter=lfs diff=lfs merge=lfs -text
 
-# GitHub Linguist: keep generated course exports and notebooks out of language stats.
-*_files/** linguist-vendored
-*ECAM[[:space:]]Moodle.html linguist-vendored
-*.ipynb linguist-vendored
+# Tell GitHub this file is documentation, NOT Hack code
+.gitattributes linguist-documentation
+
+# Keep generated files and notebooks out of language statistics
+*_files/** linguist-documentation
+*ECAM*Moodle.html linguist-documentation
+*.ipynb linguist-documentation
