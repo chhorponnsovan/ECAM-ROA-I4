@@ -1,4 +1,4 @@
-# ECAM-ROA-I4GIM-S1
+# ECAM-ROA-S1
 
 ## Courses
 
@@ -11,7 +11,7 @@
 - [Probability and Inferential Statistics](Probability-and-Inferential-statistics/Probability-and-Inferential-statistics.md)
 - [Vibration](Vibration/Vibration.md)
 
-# ECAM-ROA-I4GIM-S2
+# ECAM-ROA-S2
 
 ## Courses
 
